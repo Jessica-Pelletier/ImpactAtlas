@@ -18,6 +18,30 @@ get_header();
 
 ?>
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="alert alert-primary">
+                Bootstrap Test 1
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success">
+                Bootstrap Test 2
+            </button>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    Bootstrap Test 3
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <?php get_header(); ?>
 
 
