@@ -138,10 +138,10 @@ add_action( 'widgets_init', 'impactatlas_widgets_init' );
  * Enqueue scripts and styles.
  */
 function impactatlas_scripts() {
-    // Bootstrap CSS first
-    wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css');
+    // Bootstrap customized CSS
+    wp_enqueue_style('bootstrap-custom', get_template_directory_uri() . '/sass/bootstrap-custom.css');
     
-    // Theme styles after Bootstrap (removed duplicate)
+    // Theme styles after Bootstrap
     wp_enqueue_style('impactatlas-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_style_add_data('impactatlas-style', 'rtl', 'replace');
 

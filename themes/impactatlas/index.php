@@ -18,28 +18,22 @@ get_header();
 
 ?>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="alert alert-primary">
-                Bootstrap Test 1
-            </div>
+<div class="container mt-4">
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="p-3 bg-primary text-white">Primary Color</div>
         </div>
-        <div class="col-md-4">
-            <button class="btn btn-success">
-                Bootstrap Test 2
-            </button>
+        <div class="col-md-3">
+            <div class="p-3 bg-secondary text-white">Secondary Color</div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    Bootstrap Test 3
-                </div>
-            </div>
+        <div class="col-md-3">
+            <div class="p-3 bg-success text-white">Success Color</div>
+        </div>
+        <div class="col-md-3">
+            <div class="p-3 bg-info text-white">Info Color</div>
         </div>
     </div>
 </div>
-
 
 
 <?php get_header(); ?>
