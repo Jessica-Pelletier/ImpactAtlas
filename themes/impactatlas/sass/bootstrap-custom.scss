@@ -1,16 +1,11 @@
-//Theme Name: ImpactAtlas
-//Author: Jessica Pelletier
-//Version: 1.0.0
-
-$primary: #4373EB;    // Main brand color
-$secondary: #EAC81F;  // Secondary brand color
-$success: #28a745;    // Success state color
-$info: #91ADF3;       // Info state color
-$warning: #e47c09;    // Warning state color
-$danger: #dc3545;     // Danger state color
-$light: #f8f9fa;      // Light color
-$dark: #343a40;       // Dark color
-
+$primary: #4373EB;    
+$secondary: #EAC81F;  
+$success: #28a745;    
+$info: #91ADF3;       
+$warning: #e47c09;    
+$danger: #dc3545;     
+$light: #f8f9fa;      
+$dark: #343a40;       
 
 $theme-colors: (
   "primary": $primary,
@@ -23,12 +18,19 @@ $theme-colors: (
   "dark": $dark
 );
 
-
-
-
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+.custom-logo {
+    max-width: 200px;
+    height: auto;
+    width: auto;
+}
 
-
-
-
+// .navbar-brand {
+//     img.custom-logo {
+//         max-height: 50px;
+//         width: auto;
+//         object-fit: contain;
+//         margin-right: 10px;
+//     }
+// }

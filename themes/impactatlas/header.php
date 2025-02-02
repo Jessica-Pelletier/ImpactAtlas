@@ -34,34 +34,42 @@
 
 
 
-			<?php
-			
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$impactatlas_description = get_bloginfo( 'description', 'display' );
-			if ( $impactatlas_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $impactatlas_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <!-- Site Branding (Logo + Title) -->
+        <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+            <?php if (has_custom_logo()) : ?>
+                <?php the_custom_logo(); ?>
+            <?php else : ?>
+                <span class="site-title"><?php bloginfo('name'); ?></span>
+            <?php endif; ?>
+        </a>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'impactatlas' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
+
+
+        <!-- Navbar Toggler for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse" id="primary-menu">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'menu-1', // Adjust this based on your registered menu
+                'container'      => false,
+                'menu_class'     => 'navbar-nav ms-auto', // Bootstrap class for right-aligned menu
+                'fallback_cb'    => '__return_false', // Prevents default WordPress menu output
+
+            ));
+            ?>
+        </div>
+    </div>
+</nav>
+
+
+
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

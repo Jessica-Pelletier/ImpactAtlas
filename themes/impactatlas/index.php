@@ -18,22 +18,6 @@ get_header();
 
 ?>
 
-<div class="container mt-4">
-    <div class="row g-3">
-        <div class="col-md-3">
-            <div class="p-3 bg-primary text-white">Primary Color</div>
-        </div>
-        <div class="col-md-3">
-            <div class="p-3 bg-secondary text-white">Secondary Color</div>
-        </div>
-        <div class="col-md-3">
-            <div class="p-3 bg-success text-white">Success Color</div>
-        </div>
-        <div class="col-md-3">
-            <div class="p-3 bg-info text-white">Info Color</div>
-        </div>
-    </div>
-</div>
 
 
 <?php get_header(); ?>
