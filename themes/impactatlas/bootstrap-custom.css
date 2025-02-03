@@ -12288,6 +12288,12 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 li {
   text-decoration: none;
+}
+
+.navbar .btn-primary {
+  background-color: #4373EB;
+  font-family: "Poppins", sans-serif;
+  color: #f8f9fa;
 } 
 
 /*# sourceMappingURL=bootstrap-custom.css.map */

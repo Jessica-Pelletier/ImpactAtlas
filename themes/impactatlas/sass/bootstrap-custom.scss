@@ -44,12 +44,16 @@ h1, h2, h3 {
   text-transform:uppercase;
   font-family: 'Poppins', sans-serif;
   color: $primary;
-  
 
-
-  
 }
 
 li {
   text-decoration: none;
+}
+
+.navbar .btn-primary {
+  background-color: $primary;
+  font-family: 'Poppins', sans-serif;
+  color: $light;
+  
 }

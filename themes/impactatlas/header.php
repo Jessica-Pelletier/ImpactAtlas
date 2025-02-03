@@ -35,7 +35,7 @@
 
 
 		
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar  navbar-expand-lg ">
     <div class="container-fluid">
         <!-- Site Branding (Logo + Title) -->
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
@@ -64,7 +64,11 @@
                 'link_class'     => 'nav-link',
 
             ));
+
+
             ?>
+
+        <a href="#cta" class="btn btn-primary ms-3">Subscribe</a>
         </div>
     </div>
 </nav>
