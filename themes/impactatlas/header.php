@@ -57,10 +57,10 @@
         <div class="collapse navbar-collapse" id="primary-menu">
             <?php
             wp_nav_menu(array(
-                'theme_location' => 'menu-1', // Adjust this based on your registered menu
+                'theme_location' => 'menu-1', 
                 'container'      => false,
-                'menu_class'     => 'navbar-nav ms-auto', // Bootstrap class for right-aligned menu
-                'fallback_cb'    => '__return_false', // Prevents default WordPress menu output
+                'menu_class'     => 'navbar-nav mx-auto text-center gap-3', 
+                'fallback_cb'    => '__return_false', 
 
             ));
             ?>
