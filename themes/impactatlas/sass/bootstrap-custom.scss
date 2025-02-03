@@ -20,9 +20,36 @@ $theme-colors: (
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+
+/* GLOBALS */
+
 .custom-logo {
     max-width: 200px;
     height: auto;
     width: auto;
 }
 
+body {
+  font-family: 'Newsreader', serif;
+  
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header styles */
+.menu-item a{
+  text-decoration: none; 
+  text-transform:uppercase;
+  font-family: 'Poppins', sans-serif;
+  color: $primary;
+  
+
+
+  
+}
+
+li {
+  text-decoration: none;
+}

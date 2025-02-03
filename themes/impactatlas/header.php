@@ -61,6 +61,7 @@
                 'container'      => false,
                 'menu_class'     => 'navbar-nav mx-auto text-center gap-3', 
                 'fallback_cb'    => '__return_false', 
+                'link_class'     => 'nav-link',
 
             ));
             ?>
