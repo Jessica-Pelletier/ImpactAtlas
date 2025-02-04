@@ -12021,4 +12021,9 @@ li {
 /* hero  */
 .carousel-caption {
   padding-bottom: 16%;
+}
+
+/* Featured */
+.featured {
+  background-color: #f8f9fa;
 }/*# sourceMappingURL=bootstrap-custom.css.map */

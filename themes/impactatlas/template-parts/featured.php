@@ -1,4 +1,4 @@
-<div class="container">
+<section class="featured"><div class="container pt-5 pb-5">
   <h2 >Featured Articles</h2>
 
 
@@ -44,3 +44,4 @@
 
   </div>
 </div>
+</section>
