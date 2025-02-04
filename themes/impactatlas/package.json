@@ -37,8 +37,8 @@
     "map": false
   },
   "scripts": {
-    "watch": "sass --watch sass/:./",
-    "compile:css": "sass sass/:./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "watch": "sass --watch sass/bootstrap-custom.scss:sass/bootstrap-custom.css",
+    "compile:css": "sass sass/bootstrap-custom.scss:sass/bootstrap-custom.css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",

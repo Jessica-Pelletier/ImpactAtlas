@@ -20,3 +20,6 @@ get_header();
 <h3>This is an h3</h3>
 
 <p> This is a paragraph </p>
+
+
+<?php get_footer(); ?>

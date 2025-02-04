@@ -18,6 +18,20 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+
+
+    <!-- Debug: Print all enqueued scripts and styles -->
+<?php
+global $wp_scripts, $wp_styles;
+echo '<!-- Enqueued Scripts -->';
+foreach($wp_scripts->queue as $script) {
+    echo '<!-- ' . $script . ' -->';
+}
+echo '<!-- Enqueued Styles -->';
+foreach($wp_styles->queue as $style) {
+    echo '<!-- ' . $style . ' -->';
+}
+?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,7 +49,7 @@
 
 
 		
-		<nav class="navbar  navbar-expand-lg ">
+		<nav class="navbar sticky-top navbar-expand-lg ">
     <div class="container-fluid">
         <!-- Site Branding (Logo + Title) -->
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
@@ -78,3 +92,6 @@
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+
+
+   
