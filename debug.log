@@ -93,3 +93,5 @@
 [04-Feb-2025 21:57:16 UTC] PHP Warning:  Undefined variable $join_button_ in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/template-parts/join.php on line 9
 [04-Feb-2025 22:09:05 UTC] Automatic updates starting...
 [04-Feb-2025 22:09:05 UTC] Automatic updates complete.
+[04-Feb-2025 23:08:27 UTC] PHP Parse error:  syntax error, unexpected end of file in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/footer.php on line 76
+[04-Feb-2025 23:09:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/footer.php on line 81

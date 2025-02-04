@@ -11,24 +11,70 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'impactatlas' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'impactatlas' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'impactatlas' ), 'impactatlas', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer id="colophon" class="site-footer">
+    <div class="container">
+
+        <div class="row mb-4">
+            <div class="col text-center">
+                <div class="p-3 center">   
+					
+
+
+<?php if (has_custom_logo()) : ?>
+                <?php the_custom_logo(); ?>
+            <?php else : ?>
+                <span class="site-title"><?php bloginfo('name'); ?></span> 
+<?php endif; ?>
+
+			</div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="p-3  ">Column 1</div>
+            </div>
+            <div class="col">
+                <div class="p-3  ">Column 2</div>
+            </div>
+            <div class="col">
+                <div class="p-3  ">Column 3</div>
+            </div>
+        </div>
+
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="p-3  ">Column 1</div>
+            </div>
+            <div class="col">
+                <div class="p-3  ">Column 2</div>
+            </div>
+            <div class="col">
+                <div class="p-3 ">Column 3</div>
+            </div>
+            <div class="col">
+                <div class="p-3 ">Column 4</div>
+            </div>
+            <div class="col">
+                <div class="p-3">Column 5</div>
+            </div>
+        </div>
+
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="p-3 ">Column 1</div>
+            </div>
+            <div class="col">
+                <div class="p-3 ">Column 2</div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <?php wp_footer(); ?>
 
 </body>
 </html>
+
