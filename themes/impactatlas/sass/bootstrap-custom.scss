@@ -37,17 +37,32 @@ $body: 18px;
     width: auto;
 }
 
-body {
-  font-family: 'Newsreader', serif;
+
   
+
+article {
+  font-family: 'Newsreader', serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
   font-family: 'Poppins', sans-serif;
 }
 
 h1 {
   font-size: $extralarge;
+}
+
+h2{
+  font-size: $large;
+}
+
+h3 { 
+  font-size: $medium;
+
+}
+
+p {
+  font-size: $body;
 }
 
 /* Header styles */
@@ -76,5 +91,5 @@ li {
 
 /* hero  */
 .carousel-caption {
-padding-bottom: 10%;
+padding-bottom: 16%;
 }

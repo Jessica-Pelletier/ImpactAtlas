@@ -11972,16 +11972,28 @@ textarea.form-control-lg {
   width: auto;
 }
 
-body {
+article {
   font-family: "Newsreader", serif;
 }
 
-h1, .h1, h2, .h2, h3, .h3 {
+h1, .h1, h2, .h2, h3, .h3, p {
   font-family: "Poppins", sans-serif;
 }
 
 h1, .h1 {
   font-size: 3.4rem;
+}
+
+h2, .h2 {
+  font-size: 2.5rem;
+}
+
+h3, .h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 18px;
 }
 
 /* Header styles */
@@ -12008,5 +12020,5 @@ li {
 
 /* hero  */
 .carousel-caption {
-  padding-bottom: 10%;
+  padding-bottom: 16%;
 }/*# sourceMappingURL=bootstrap-custom.css.map */
