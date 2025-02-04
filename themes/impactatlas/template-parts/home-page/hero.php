@@ -20,10 +20,11 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
    
-      <img src="<?php echo $firstslideimage['url'] ?>" class="d-block w-100" alt="...">
+      <img src="<?php echo $firstslideimage['url'] ?>" class="d-block w-100 " alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
       <div class="carousel-caption d-none d-md-block">
         <h1> <?php echo $firstslidelabel ?> </h1>
-        <p> <?php echo $firstslidesubheading ?> </p>
+        <h2> <?php echo $firstslidesubheading ?> <h2>
         <button class="btn btn-primary ms-3" > <?php echo $firstslidecta ?> </button>
 
       </div>
@@ -33,11 +34,25 @@
 
     <div class="carousel-item">
       <img src="<?php echo $secondslideimage['url'] ?>" class="d-block w-100" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h1> <?php echo $secondslidelabel ?> </h1>
+        <h2> <?php echo $secondslidesubheading ?> <h2>
+        <button class="btn btn-primary ms-3" > <?php echo $secondslidecta ?> </button>
+
+      </div>
     </div>
 
     
     <div class="carousel-item">
       <img src="<?php echo $thirdslideimage['url'] ?>" class="d-block w-100" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h1> <?php echo $thirdslidelabel ?> </h1>
+        <h2> <?php echo $thirdslidesubheading ?> <h2>
+        <button class="btn btn-primary ms-3" > <?php echo $thirdslidecta ?> </button>
+
+      </div>
     </div>
   </div>
 

@@ -36,7 +36,7 @@
   --bs-warning: #e47c09;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
-  --bs-dark: #343a40;
+  --bs-dark: #0E0E10;
   --bs-primary-rgb: 67, 115, 235;
   --bs-secondary-rgb: 234, 200, 31;
   --bs-success-rgb: 40, 167, 69;
@@ -44,7 +44,7 @@
   --bs-warning-rgb: 228, 124, 9;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 52, 58, 64;
+  --bs-dark-rgb: 14, 14, 16;
   --bs-primary-text-emphasis: #1b2e5e;
   --bs-secondary-text-emphasis: #5e500c;
   --bs-success-text-emphasis: #10431c;
@@ -2030,13 +2030,13 @@ progress {
 
 .table-dark {
   --bs-table-color: #fff;
-  --bs-table-bg: #343a40;
-  --bs-table-border-color: #5d6166;
-  --bs-table-striped-bg: #3e444a;
+  --bs-table-bg: #0E0E10;
+  --bs-table-border-color: #3e3e40;
+  --bs-table-striped-bg: #1a1a1c;
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #484e53;
+  --bs-table-active-bg: #262628;
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #43494e;
+  --bs-table-hover-bg: #202022;
   --bs-table-hover-color: #fff;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3130,19 +3130,19 @@ textarea.form-control-lg {
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #343a40;
-  --bs-btn-border-color: #343a40;
+  --bs-btn-bg: #0E0E10;
+  --bs-btn-border-color: #0E0E10;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #52585d;
-  --bs-btn-hover-border-color: #484e53;
-  --bs-btn-focus-shadow-rgb: 82, 88, 93;
+  --bs-btn-hover-bg: #323234;
+  --bs-btn-hover-border-color: #262628;
+  --bs-btn-focus-shadow-rgb: 50, 50, 52;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #5d6166;
-  --bs-btn-active-border-color: #484e53;
+  --bs-btn-active-bg: #3e3e40;
+  --bs-btn-active-border-color: #262628;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #343a40;
-  --bs-btn-disabled-border-color: #343a40;
+  --bs-btn-disabled-bg: #0E0E10;
+  --bs-btn-disabled-border-color: #0E0E10;
 }
 
 .btn-outline-primary {
@@ -3265,19 +3265,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #343a40;
-  --bs-btn-border-color: #343a40;
+  --bs-btn-color: #0E0E10;
+  --bs-btn-border-color: #0E0E10;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #343a40;
-  --bs-btn-hover-border-color: #343a40;
-  --bs-btn-focus-shadow-rgb: 52, 58, 64;
+  --bs-btn-hover-bg: #0E0E10;
+  --bs-btn-hover-border-color: #0E0E10;
+  --bs-btn-focus-shadow-rgb: 14, 14, 16;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #343a40;
-  --bs-btn-active-border-color: #343a40;
+  --bs-btn-active-bg: #0E0E10;
+  --bs-btn-active-border-color: #0E0E10;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #343a40;
+  --bs-btn-disabled-color: #0E0E10;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #343a40;
+  --bs-btn-disabled-border-color: #0E0E10;
   --bs-gradient: none;
 }
 
@@ -6903,8 +6903,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(42, 46, 51, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(42, 46, 51, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(11, 11, 13, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(11, 11, 13, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-body-emphasis {
@@ -11980,6 +11980,10 @@ h1, .h1, h2, .h2, h3, .h3 {
   font-family: "Poppins", sans-serif;
 }
 
+h1, .h1 {
+  font-size: 3.4rem;
+}
+
 /* Header styles */
 .menu-item a {
   text-decoration: none;
@@ -11995,6 +11999,14 @@ li {
 .btn-primary {
   background-color: #EAC81F;
   font-family: "Poppins", sans-serif;
-  color: #343a40;
+  color: #0E0E10;
   border: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+/* hero  */
+.carousel-caption {
+  padding-bottom: 10%;
 }/*# sourceMappingURL=bootstrap-custom.css.map */

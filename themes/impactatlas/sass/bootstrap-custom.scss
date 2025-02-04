@@ -5,7 +5,7 @@ $info: #91ADF3;
 $warning: #e47c09;    
 $danger: #dc3545;     
 $light: #f8f9fa;      
-$dark: #343a40;       
+$dark: #0E0E10;       
 
 $theme-colors: (
   "primary": $primary,
@@ -17,6 +17,14 @@ $theme-colors: (
   "light": $light,
   "dark": $dark
 );
+
+
+
+//font-sizes
+$extralarge: 3.4rem;
+$large: 2.5rem;
+$medium: 1.2rem;
+$body: 18px;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -38,6 +46,10 @@ h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
 }
 
+h1 {
+  font-size: $extralarge;
+}
+
 /* Header styles */
 .menu-item a{
   text-decoration: none; 
@@ -56,5 +68,13 @@ li {
   font-family: 'Poppins', sans-serif;
   color: $dark;
   border: none;
+  font-weight: 500;
+  text-transform:uppercase;
+  font-size: $medium;
   
+}
+
+/* hero  */
+.carousel-caption {
+padding-bottom: 10%;
 }
