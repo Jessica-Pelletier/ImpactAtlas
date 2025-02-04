@@ -51,9 +51,10 @@ li {
   text-decoration: none;
 }
 
-.navbar .btn-primary {
-  background-color: $primary;
+.btn-primary {
+  background-color: $secondary;
   font-family: 'Poppins', sans-serif;
-  color: $light;
+  color: $dark;
+  border: none;
   
 }
