@@ -8,3 +8,6 @@
   
 <?php get_template_part('template-parts/featured') ?>
 <?php get_template_part('template-parts/uptodate') ?>
+
+
+<?php get_footer(); ?>

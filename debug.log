@@ -121,3 +121,4 @@
 [07-Feb-2025 17:41:25 UTC] PHP Warning:  Attempt to read property "link_before" on array in /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/class-walker-nav-menu.php on line 285
 [07-Feb-2025 17:41:25 UTC] PHP Warning:  Attempt to read property "link_after" on array in /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/class-walker-nav-menu.php on line 285
 [07-Feb-2025 17:41:25 UTC] PHP Warning:  Attempt to read property "after" on array in /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/class-walker-nav-menu.php on line 287
+[07-Feb-2025 18:44:14 UTC] PHP Warning:  Undefined variable $joinmovementtitle in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/template-parts/get-involved/join-movement.php on line 9
