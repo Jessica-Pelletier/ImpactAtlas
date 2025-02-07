@@ -16,7 +16,7 @@
 
         <div class="row mb-4">
             <div class="col text-center">
-                <div class="p-3 center">   
+                <div class=" center">   
 					
 
 
@@ -52,7 +52,7 @@
     </div>
 
 
-    <div class="row mb-4">
+    <div class="row p-2">
     <div class="col text-center">
         <?php
         wp_nav_menu(array(
