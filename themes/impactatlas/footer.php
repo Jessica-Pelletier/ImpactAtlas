@@ -30,7 +30,7 @@
             </div>
         </div>
 
-		<div class="row mb-4">
+		
     <div class="col d-flex justify-content-center">
         <div class="d-flex gap-4">
             <div>
@@ -50,37 +50,19 @@
             </div>
         </div>
     </div>
+
+
+    <div class="row mb-4">
+    <div class="col text-center">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'footer-menu',
+            'menu_class' => 'footer-menu'
+        ));
+        ?>
+    </div>
 </div>
 
-
-        <div class="row mb-4">
-            <div class="col">
-                <div class="p-3  ">Column 1</div>
-            </div>
-            <div class="col">
-                <div class="p-3  ">Column 2</div>
-            </div>
-            <div class="col">
-                <div class="p-3 ">Column 3</div>
-            </div>
-            <div class="col">
-                <div class="p-3 ">Column 4</div>
-            </div>
-            <div class="col">
-                <div class="p-3">Column 5</div>
-            </div>
-        </div>
-
-
-        <div class="row mb-4">
-            <div class="col">
-                <div class="p-3 ">Column 1</div>
-            </div>
-            <div class="col">
-                <div class="p-3 ">Column 2</div>
-            </div>
-        </div>
-    </div>
 </footer>
 
 <?php wp_footer(); ?>
