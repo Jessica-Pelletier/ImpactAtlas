@@ -2,11 +2,11 @@
   <h2 >Featured Articles</h2>
 
 
-  <div class="row">
+  <div class="row justify-content-center gy-4 g-md-4">
     
 
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
+    <div class="col-lg-4 col-md-4">
+      <div class="card" >
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
@@ -17,8 +17,8 @@
       </div>
     </div>
 
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
+    <div class="col-lg-4 col-md-4">
+      <div class="card" >
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
@@ -30,8 +30,8 @@
     </div>
 
 
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
+    <div class="col-lg-4 col-md-4">
+      <div class="card" >
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
