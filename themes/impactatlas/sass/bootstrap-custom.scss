@@ -65,6 +65,10 @@ p {
   font-size: $body;
 }
 
+.bg-light {
+  background-color: $light;
+}
+
 /* Header styles */
 .menu-item a{
   text-decoration: none; 
@@ -93,16 +97,6 @@ li {
 .carousel-caption {
 padding-bottom: 16%;
 }
-
-
-
-/* Featured */
-.featured {
-  background-color: $light;
-}
-
-
-
 
 
 /* Footer */

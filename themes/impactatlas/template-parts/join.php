@@ -11,19 +11,33 @@
 
   <div class="row justify-content-center mb-4">
     <div class="col-12 text-center">
-      <h2><?php echo $joinheading;?></h2>
+      <h2><?php echo $joinheading; ?></h2>
     </div>
   </div>
 
 
-  <div class="row">
+  <div class="row justify-content-center mb-4 text-center">
 
-    <div class="col-md-6">
-      <p><?php echo $joinparagraph;?></p>
-    </div>
-
-    <div class="col-md-6 text-center">
-      <button class="btn btn-primary"><?php echo $joinbuttontext;?></button>
+    <div class="col-12">
+      <p><?php echo $joinparagraph; ?></p>
     </div>
   </div>
+
+
+  <div class="row justify-content-center text-center ">
+    <div class="col-md-6 ">
+      <form action="/subscribe" method="post" >
+        <div class="input-group">
+        <input type="email" name="email" placeholder="Enter your email" required class="form-control me-2">
+        <button class="btn btn-primary"><?php echo $joinbuttontext; ?></button>
+</div>
+      </form>
+      
+    </div>
+
+    
+     
+
+  </div>
+
 </div>

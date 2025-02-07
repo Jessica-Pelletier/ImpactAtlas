@@ -1,4 +1,4 @@
-<section class="featured"><div class="container pt-5 pb-5">
+<section class="featured bg-light"><div class="container pt-5 pb-5">
   <h2 >Featured Articles</h2>
 
 

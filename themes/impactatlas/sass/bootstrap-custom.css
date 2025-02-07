@@ -11996,6 +11996,10 @@ p {
   font-size: 18px;
 }
 
+.bg-light {
+  background-color: #f8f9fa;
+}
+
 /* Header styles */
 .menu-item a {
   text-decoration: none;
@@ -12021,11 +12025,6 @@ li {
 /* hero  */
 .carousel-caption {
   padding-bottom: 16%;
-}
-
-/* Featured */
-.featured {
-  background-color: #f8f9fa;
 }
 
 /* Footer */

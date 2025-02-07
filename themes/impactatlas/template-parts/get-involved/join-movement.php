@@ -1,11 +1,12 @@
 <?php 
 $joinmovementtitle = get_field('join_the_movement_title'); 
-$joinmovementtext = get_field('join_movement_text'); 
-$joinmovementbutton = get_field('joing_movement_button_text');
+$joinmovementtext = get_field('join_the_movement_text'); 
+$joinmovementbutton = get_field('join_the_movement_button_text');
 ?>
 
-<section class="container text-center ">
-<div>
+<section class="bg-light">
+<div class="container text-center p-5 ">
+<div >
 <h1> <?php echo $joinmovementtitle ?> </h1>
 </div>
 
@@ -15,9 +16,9 @@ $joinmovementbutton = get_field('joing_movement_button_text');
 
 
 <div>
-<button> <?php echo $joinmovementbutton ?> </button>
+<button class="btn-primary btn"> <?php echo $joinmovementbutton ?> </button>
 </div>
-
+</div>
 
 
 </section>
