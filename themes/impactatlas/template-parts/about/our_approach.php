@@ -1,4 +1,4 @@
-<section class="py-5">
+<section class="py-5 bg-light">
   <div class="container">
     
     <div class="row mb-5">
