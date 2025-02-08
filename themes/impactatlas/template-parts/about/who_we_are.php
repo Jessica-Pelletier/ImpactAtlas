@@ -4,7 +4,7 @@ $wearetext = get_field('we_are_text');
 $weareimage = get_field('we_are_image');
 ?>
 
-<section class="bg-light about">
+<section class="bg-light about p-5">
 <div class="container text-center">
 
 
