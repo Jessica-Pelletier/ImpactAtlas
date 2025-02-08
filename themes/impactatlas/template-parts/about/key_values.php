@@ -12,30 +12,30 @@ $valueone = get_field('value_one');
     </div>
 
     <div class="row g-4"> 
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-2 rounded p-3">
+      <div class="col-md-6 col-lg-3 ">
+        <div class="card h-100 border-2 rounded p-3 bg-light">
           <h3 class="card-title">Solution-Focused Documentation</h3>
           <p class="card-body">Detailed capture of methodologies and practical insights.</p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-2 rounded p-3">
+        <div class="card h-100 border-2 rounded p-3 bg-light">
           <h3 class="card-title">Knowledge Accessibility</h3>
           <p class="card-body">Complex information transformed into clear, actionable insights.</p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-2 rounded p-3">
+        <div class="card h-100 border-2 rounded p-3 bg-light">
           <h3 class="card-title">Evidence-Based Optimism</h3>
           <p class="card-body">Hope grounded in data and rigorous analysis of verified successes.</p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-2 rounded p-3">
-          <h3 class="card-title">Collaborative Progress</h3>
+        <div class="card h-100 border-2 rounded p-3 bg-light">
+          <h3 class="card-title">A Collaborative Progress</h3>
           <p class="card-body">Connecting change-makers and fostering global solution sharing.</p>
         </div>
       </div>
