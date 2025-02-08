@@ -5,15 +5,15 @@
 <div class="container pt-5 pb-4">
   <div class="row justify-content-center mb-4">
     <div class="col-12 text-center">
-      <h2><?php echo $uptodateheading; ?></h2>
+      <h2>Stay Up to Date</h2>
     </div>
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6 pb-4">
       <form action="/subscribe" method="post" class="d-flex">
         <input type="email" name="email" placeholder="Enter your email" required class="form-control me-2">
-        <button type="submit" class="btn btn-primary"><?php echo $uptodatebutton; ?></button>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
       </form>
     </div>
   </div>
