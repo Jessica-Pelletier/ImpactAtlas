@@ -69,6 +69,10 @@ p {
   background-color: $light;
 }
 
+.bg-lightblue {
+  background-color: $info;
+}
+
 /* Header styles */
 .menu-item a{
   text-decoration: none; 
@@ -96,6 +100,13 @@ li {
 /* hero  */
 .carousel-caption {
 padding-bottom: 16%;
+}
+
+
+
+/* About us */
+.key-values .card-title{
+  color: $primary;
 }
 
 

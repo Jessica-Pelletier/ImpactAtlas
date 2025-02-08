@@ -12000,6 +12000,10 @@ p {
   background-color: #f8f9fa;
 }
 
+.bg-lightblue {
+  background-color: #91ADF3;
+}
+
 /* Header styles */
 .menu-item a {
   text-decoration: none;
@@ -12025,6 +12029,11 @@ li {
 /* hero  */
 .carousel-caption {
   padding-bottom: 16%;
+}
+
+/* About us */
+.key-values .card-title {
+  color: #4373EB;
 }
 
 /* Footer */
