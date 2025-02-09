@@ -1,6 +1,6 @@
 <section class="bg-light p-5">
 <div class="row container text-center">
-<div class="col ">
+<div class="col col-4">
     <div>
         <h1> Contact us </h1>
     </div>
@@ -10,7 +10,7 @@
         </div>
 </div>
 </div>
-<div class="col">
+<div class="col col-8">
 <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">

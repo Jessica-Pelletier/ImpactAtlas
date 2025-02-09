@@ -110,6 +110,20 @@ padding-bottom: 16%;
 }
 
 
+/* Contact page */
+.wpcf7-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.wpcf7-form .wpcf7-form-control {
+  width: 100%;
+  // margin-bottom: 20px;
+
+}
+
+
 /* Footer */
 footer {
   background-color: $primary;
