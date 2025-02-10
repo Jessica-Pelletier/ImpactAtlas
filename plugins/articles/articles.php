@@ -18,7 +18,7 @@ function articles_post_type() {
             'rewrite'   => array( 'slug' => 'my-articles' ),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-media-document',
-            // 'taxonomies' => array('categories', 'post_tag') // this is IMPORTANT
+            'taxonomies' => array('categories', 'post_tag') 
         )
     );
 }
@@ -26,7 +26,7 @@ add_action( 'init', 'articles_post_type' );
 
 //// Add categories taxonomy
 function create_articles_taxonomy() {
-    register_taxonomy('categories','articles',array(
+    register_taxonomy('article_categories','articles',array(
         'hierarchical' => true,
         'labels' => array(
             'name' => _x( 'Categories', 'taxonomy general name' ),

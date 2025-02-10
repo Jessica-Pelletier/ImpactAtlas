@@ -134,3 +134,17 @@
 [09-Feb-2025 22:46:09 UTC] Automatic updates complete.
 [10-Feb-2025 15:47:09 UTC] Automatic updates starting...
 [10-Feb-2025 15:47:09 UTC] Automatic updates complete.
+[10-Feb-2025 17:37:31 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/archive-library.php:72
+Stack trace:
+#0 /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/template-loader.php(106): include()
+#1 /Applications/MAMP/htdocs/ImpactAtlas/wp-blog-header.php(19): require_once('/Applications/M...')
+#2 /Applications/MAMP/htdocs/ImpactAtlas/index.php(17): require('/Applications/M...')
+#3 {main}
+  thrown in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/archive-library.php on line 72
+[10-Feb-2025 17:38:55 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/archive-library.php:72
+Stack trace:
+#0 /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/template-loader.php(106): include()
+#1 /Applications/MAMP/htdocs/ImpactAtlas/wp-blog-header.php(19): require_once('/Applications/M...')
+#2 /Applications/MAMP/htdocs/ImpactAtlas/index.php(17): require('/Applications/M...')
+#3 {main}
+  thrown in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/archive-library.php on line 72
