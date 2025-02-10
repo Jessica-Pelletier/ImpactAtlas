@@ -61,9 +61,24 @@ while ( $loop->have_posts() ) : $loop->the_post(); // The loop
       <div class="card" >
         <div class="card-body">
         <h5><?php the_title()?></h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">    <?php echo get_the_term_list(get_the_ID(), 'article_categories', 'Categories: ', ', ', ''); ?></h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="<?php the_permalink(); ?>" class="card-link">Card link</a>
+          <h6 class="card-subtitle mb-2 text-body-secondary">   
+
+
+
+          <?php 
+        $terms = get_the_terms(get_the_ID(), 'article_categories');
+        if ($terms && !is_wp_error($terms)) {
+            $first_term = reset($terms);
+            echo $first_term->name;
+        }
+    ?>
+            
+            
+            </h6>
+          <p class="card-text">
+            <?php echo wp_trim_words(get_field('what'), 20, '...'); ?>
+        </p>
+          <a href="<?php the_permalink(); ?>" class="card-link">View Study</a>
           
         </div>
       </div>

@@ -18,7 +18,7 @@ function articles_post_type() {
             'rewrite'   => array( 'slug' => 'my-articles' ),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-media-document',
-            'taxonomies' => array('categories', 'post_tag') 
+            'taxonomies' => array('article_categories', 'post_tag') 
         )
     );
 }
