@@ -12031,6 +12031,17 @@ li {
   padding-bottom: 16%;
 }
 
+/* Articles */
+.articles .btn {
+  color: #4373EB;
+  border-color: #4373EB;
+}
+
+.articles .btn:hover {
+  background-color: #91ADF3;
+  color: #f8f9fa;
+}
+
 /* About us */
 .key-values .card-title {
   color: #4373EB;

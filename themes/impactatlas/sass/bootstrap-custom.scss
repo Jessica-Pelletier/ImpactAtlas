@@ -100,6 +100,24 @@ li {
 /* hero  */
 .carousel-caption {
 padding-bottom: 16%;
+
+}
+
+
+
+
+/* Articles */
+
+.articles .btn {
+  color: $primary;
+  border-color: $primary;
+
+}
+
+.articles .btn:hover {
+ background-color: $info;
+ color: $light;
+
 }
 
 
