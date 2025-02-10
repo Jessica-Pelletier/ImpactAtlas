@@ -158,3 +158,7 @@ Stack trace:
 [10-Feb-2025 20:21:25 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/class-wpdb.php on line 1982
 [10-Feb-2025 20:21:43 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/class-wpdb.php on line 1982
 [10-Feb-2025 20:21:44 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/class-wpdb.php on line 1982
+[10-Feb-2025 21:14:54 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/template-parts/featured.php on line 57
+[10-Feb-2025 21:14:54 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/template-parts/featured.php on line 57
+[10-Feb-2025 21:14:55 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/template-parts/featured.php on line 57
+[10-Feb-2025 21:14:57 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/template-parts/featured.php on line 57
