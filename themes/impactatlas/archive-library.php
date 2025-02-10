@@ -30,7 +30,7 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
-  </div>
+  
 </nav>
 
 <div class="row justify-content-center gy-4 g-md-4">
@@ -61,7 +61,7 @@ while ( $loop->have_posts() ) : $loop->the_post(); // The loop
       <div class="card" >
         <div class="card-body">
         <h5><?php the_title()?></h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">   
+          <h6 class="card-subtitle mb-2  secondary">   
 
 
 
@@ -72,8 +72,7 @@ while ( $loop->have_posts() ) : $loop->the_post(); // The loop
             echo $first_term->name;
         }
     ?>
-            
-            
+             
             </h6>
           <p class="card-text">
             <?php echo wp_trim_words(get_field('what'), 20, '...'); ?>
@@ -85,37 +84,11 @@ while ( $loop->have_posts() ) : $loop->the_post(); // The loop
     </div>
 
 
-
-
-
-
-
-
-
-
-
 <?php endwhile;
 wp_reset_postdata(); // Restore original post data
 ?>
 
-
-
-
-
-
-
-
-
-
-    
-
 </div>
-
-
-
-
-
-
 </section>
 
 

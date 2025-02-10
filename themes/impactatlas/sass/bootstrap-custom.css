@@ -12004,6 +12004,10 @@ p {
   background-color: #91ADF3;
 }
 
+.secondary {
+  color: #EAC81F;
+}
+
 /* Header styles */
 .menu-item a {
   text-decoration: none;
