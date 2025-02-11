@@ -9,12 +9,15 @@
     </div>
   </div>
 
-  <div class="row justify-content-center">
-    <div class="col-md-6 pb-4">
-      <form action="/subscribe" method="post" class="d-flex">
-        <input type="email" name="email" placeholder="Enter your email" required class="form-control me-2">
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-    </div>
+  <div class="row justify-content-center text-center">
+  <div class="col-md-6">
+    <form action="https://outlook.us10.list-manage.com/subscribe/post?u=cecdcda267c4df17babb7e118&id=e8b628216f&f_id=00071be2f0" method="post">
+      <div class="input-group">
+        <input type="email" name="EMAIL" placeholder="Enter your email" required class="form-control me-2">
+        <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you">
+        <button class="btn btn-primary">Subscribe></button>
+      </div>
+    </form>
   </div>
+</div>
 </div>

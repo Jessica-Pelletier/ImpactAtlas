@@ -15,10 +15,11 @@ function articles_post_type() {
             'show_in_rest' => true,
             'supports' => array('title', 'editor', 'thumbnail'),
             'has_archive' => true,
-            'rewrite'   => array( 'slug' => 'my-articles' ),
+            'rewrite'   => array( 'slug' => 'articles' ),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-media-document',
-            'taxonomies' => array('article_categories', 'post_tag') 
+            'taxonomies' => array('article_categories', 'post_tag'),
+            'publicly_queryable' => true, 
         )
     );
 }
