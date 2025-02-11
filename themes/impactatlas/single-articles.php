@@ -72,7 +72,7 @@ get_header(); ?>
 		<!-- Sidebar -->
 		<div class="col-lg-4 pt-lg-0 pt-md-3 ">
 			<div class="sidebar bg-light">
-				<h3>Related Articles</h3>
+				<h2>Related Articles</h2>
 				<?php
 				// Get articles in the same category
 				$terms = get_the_terms(get_the_ID(), 'article_categories');
@@ -97,7 +97,7 @@ get_header(); ?>
 					if ($related_query->have_posts()) :
 						while ($related_query->have_posts()) : $related_query->the_post();
 				?>
-							<div class="related-article mb-3">
+							<div class="related-article mb-3 pb-2">
 								<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 								<p><?php echo wp_trim_words(get_field('what'), 10, '...'); ?></p>
 							</div>
