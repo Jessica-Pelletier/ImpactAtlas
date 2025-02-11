@@ -40,9 +40,7 @@ $body: 18px;
 
   
 
-article {
-  font-family: 'Newsreader', serif;
-}
+
 
 h1, h2, h3, p {
   font-family: 'Poppins', sans-serif;
@@ -75,6 +73,16 @@ p {
 
 .secondary {
   color: $secondary;
+}
+
+
+.article-content h2, 
+.article-content p {
+  font-family: 'Newsreader', serif;
+}
+
+.card-text, .related-article p{
+  font-family: 'Newsreader', serif;
 }
 
 /* Header styles */

@@ -36,7 +36,7 @@
       </div>
       <div class="col-md-6 text-center">
         <h3>Step 3 - Share</h3>
-        <p>We beleive in making solutionals accessible by creating clear documentation and connecting with change makers. Enabling implementations of our findings elsewhere.</p>
+        <p>We believe in making solutions accessible by creating clear documentation and connecting with change makers. Enabling implementations of our findings elsewhere.</p>
       </div>
     </div>
 
