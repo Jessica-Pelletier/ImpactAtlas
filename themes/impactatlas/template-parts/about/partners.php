@@ -1,5 +1,6 @@
 <section>
     <div class="container text-center p-5">
+        <h2>Partners</h2>
         <div class="row">
 
             <div class="col-6 col-md-3 ">
