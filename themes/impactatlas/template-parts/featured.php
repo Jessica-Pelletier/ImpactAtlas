@@ -1,5 +1,5 @@
 <section class="featured bg-light">
-    <div class="container pt-5 pb-5">
+    <div class="container pt-5 p-5">
         <h2>Featured Articles</h2>
         <div class="row justify-content-center gy-4 g-md-4">
             <?php 
@@ -21,7 +21,7 @@
                 while($featured_query->have_posts()) : $featured_query->the_post(); 
                 ?>
                 <div class="col-lg-4 col-md-4">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h5><?php the_title()?></h5>
                             <h6 class="card-subtitle mb-2 secondary">
