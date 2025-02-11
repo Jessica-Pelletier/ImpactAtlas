@@ -133,6 +133,14 @@ padding-bottom: 16%;
 }
 
 
+.single .category {
+  display: inline-block;
+ background-color: $secondary;
+ border-radius: 2px;
+ padding: 3px;
+}
+
+
 
 /* About us */
 .key-values .card-title{

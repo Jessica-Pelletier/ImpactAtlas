@@ -12051,6 +12051,13 @@ li {
   color: #f8f9fa;
 }
 
+.single .category {
+  display: inline-block;
+  background-color: #EAC81F;
+  border-radius: 2px;
+  padding: 3px;
+}
+
 /* About us */
 .key-values .card-title {
   color: #4373EB;

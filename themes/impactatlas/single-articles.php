@@ -7,10 +7,10 @@
  */
 
 get_header(); ?>
-
+<main class="single">
 <div class="container p-5 ">
 	<div class="row ">
-		<div class="col-lg-8 bg-light">
+		<div class="col-lg-8 bg-light p-3">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 					<!-- Article Header -->
@@ -18,13 +18,15 @@ get_header(); ?>
 						<h1><?php the_title(); ?></h1>
 
 						<!-- Category -->
+						<div>
 						<?php
 						$terms = get_the_terms(get_the_ID(), 'article_categories');
 						if ($terms && !is_wp_error($terms)) {
 							$first_term = reset($terms);
-							echo '<span class="category">' . $first_term->name . '</span>';
+							echo '<div class="category">' . $first_term->name . '</div>';
 						}
 						?>
+						</div> 
 					</header>
 
 					<!-- Article Content -->
@@ -109,7 +111,7 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
-</main><!-- #main -->
+</main>
 
 <?php
 
