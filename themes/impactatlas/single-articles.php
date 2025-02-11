@@ -70,7 +70,7 @@ get_header(); ?>
 		</div>
 
 		<!-- Sidebar -->
-		<div class="col-lg-4">
+		<div class="col-lg-4 pt-lg-0 pt-md-3 ">
 			<div class="sidebar bg-light">
 				<h3>Related Articles</h3>
 				<?php
