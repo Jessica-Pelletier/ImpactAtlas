@@ -39,9 +39,7 @@
 
 
 
-
-
-                <nav class="navbar sticky-top navbar-expand-lg ">
+                <nav class="navbar  navbar-expand-lg  ">
                     <div class="container-fluid">
 
                         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
