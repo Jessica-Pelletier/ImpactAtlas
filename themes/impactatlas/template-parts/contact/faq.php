@@ -1,5 +1,6 @@
 <section class="p-5"> 
 <div class="container">
+  <h2>FAQ</h2>
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
