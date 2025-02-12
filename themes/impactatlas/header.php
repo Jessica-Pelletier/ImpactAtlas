@@ -73,8 +73,9 @@
 
 
                             ?>
-
-                            <a href="#" class="btn btn-primary ms-3 " data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</a>
+<div class="text-center text-lg-end">
+                <a href="#" class="btn btn-primary d-inline-block" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</a>
+            </div>
 
                         </div>
                     </div>
