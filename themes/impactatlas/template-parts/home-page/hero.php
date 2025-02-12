@@ -25,7 +25,9 @@
       <div class="carousel-caption d-none d-md-block">
         <h1> <?php echo $firstslidelabel ?> </h1>
         <h2> <?php echo $firstslidesubheading ?> <h2>
-        <button class="btn btn-primary ms-3" > <?php echo $firstslidecta ?> </button>
+        <a href="<?php echo get_permalink(35); ?>" class="btn btn-primary ms-3">
+    <?php echo $firstslidecta ?>
+</a>
 
       </div>
       
@@ -38,7 +40,11 @@
       <div class="carousel-caption d-none d-md-block">
         <h1> <?php echo $secondslidelabel ?> </h1>
         <h2> <?php echo $secondslidesubheading ?> <h2>
-        <button class="btn btn-primary ms-3" > <?php echo $secondslidecta ?> </button>
+
+        <a href="<?php echo get_permalink(39); ?>" class="btn btn-primary ms-3">
+    <?php echo $secondslidecta ?>
+</a>
+
 
       </div>
     </div>
@@ -50,7 +56,13 @@
       <div class="carousel-caption d-none d-md-block">
         <h1> <?php echo $thirdslidelabel ?> </h1>
         <h2> <?php echo $thirdslidesubheading ?> <h2>
-        <button class="btn btn-primary ms-3" > <?php echo $thirdslidecta ?> </button>
+
+        <a href="<?php echo get_permalink(37); ?>" class="btn btn-primary ms-3">
+    <?php echo $thirdslidecta ?>
+</a>
+
+
+
 
       </div>
     </div>
