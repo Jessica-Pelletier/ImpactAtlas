@@ -16,12 +16,12 @@
 
 
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
   <div class="carousel-inner">
     <div class="carousel-item active">
    
       <img src="<?php echo $firstslideimage['url'] ?>" class="d-block w-100 " alt="...">
-      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       <div class="carousel-caption d-none d-md-block">
         <h1> <?php echo $firstslidelabel ?> </h1>
         <h2> <?php echo $firstslidesubheading ?> <h2>
@@ -36,7 +36,7 @@
 
     <div class="carousel-item">
       <img src="<?php echo $secondslideimage['url'] ?>" class="d-block w-100" alt="...">
-      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       <div class="carousel-caption d-none d-md-block">
         <h1> <?php echo $secondslidelabel ?> </h1>
         <h2> <?php echo $secondslidesubheading ?> <h2>
@@ -52,7 +52,7 @@
     
     <div class="carousel-item">
       <img src="<?php echo $thirdslideimage['url'] ?>" class="d-block w-100" alt="...">
-      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       <div class="carousel-caption d-none d-md-block">
         <h1> <?php echo $thirdslidelabel ?> </h1>
         <h2> <?php echo $thirdslidesubheading ?> <h2>
