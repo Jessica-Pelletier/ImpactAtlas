@@ -12058,6 +12058,18 @@ li {
   font-size: 16px;
 }
 
+.leaflet-card p {
+  font-size: 16px;
+}
+
+.leaflet-popup-content h4, .leaflet-popup-content .h4 {
+  margin: 0;
+}
+
+.leaflet-popup-content .leaflet-card p {
+  margin: 0;
+}
+
 /* hero  */
 .carousel-caption {
   padding-bottom: 16%;
