@@ -12072,6 +12072,16 @@ li {
 
 /* hero  */
 /* home page */
+.banner {
+  background-color: #eac81f;
+  height: 30px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+
 /* Articles */
 .articles .btn {
   color: #09739a;

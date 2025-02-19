@@ -6,6 +6,8 @@
 get_header();
 
 ?>
+
+<?php get_template_part('template-parts/home-page/banner') ?>
 <!--leaflet.js map section-->
 
 

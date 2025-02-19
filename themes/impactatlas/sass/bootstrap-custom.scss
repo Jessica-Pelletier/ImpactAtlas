@@ -138,7 +138,14 @@ margin: 0
 // }
 /* home page */
 
-
+.banner {
+  background-color: $secondary;
+  height: 30px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
 
 
 
