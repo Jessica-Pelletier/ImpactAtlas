@@ -1,6 +1,6 @@
 $primary: #09739A;    
 $secondary: #EAC81F;  
-$dark-secondary: #A88F10;
+$dark-secondary: #CDAE13;
 $success: #28a745;    
 $info: #91ADF3;       
 $warning: #e47c09;    
@@ -136,7 +136,7 @@ padding-bottom: 16%;
 
 .single .category {
   display: inline-block;
- background-color: $dark-secondary;
+ background-color: $secondary;
  border-radius: 2px;
  padding: 3px;
 }
@@ -144,6 +144,10 @@ padding-bottom: 16%;
 .meta-data {
   display: flex;
   justify-content: space-between;
+}
+
+.card-category{
+  color: $dark-secondary;
 }
 
 /* About us */

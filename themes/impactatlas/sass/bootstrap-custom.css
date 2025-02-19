@@ -12053,7 +12053,7 @@ li {
 
 .single .category {
   display: inline-block;
-  background-color: #A88F10;
+  background-color: #EAC81F;
   border-radius: 2px;
   padding: 3px;
 }
@@ -12061,6 +12061,10 @@ li {
 .meta-data {
   display: flex;
   justify-content: space-between;
+}
+
+.card-category {
+  color: #CDAE13;
 }
 
 /* About us */

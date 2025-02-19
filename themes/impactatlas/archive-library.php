@@ -227,7 +227,7 @@
                         <div class="card h-100">
                             <div class="card-body d-flex flex-column">
                                 <h5><?php the_title() ?></h5>
-                                <h6 class="card-subtitle mb-2 secondary">
+                                <h6 class="card-subtitle mb-2 card-category">
                                     <?php
                                     $terms = get_the_terms(get_the_ID(), 'article_categories');
                                     if ($terms && !is_wp_error($terms)) {
