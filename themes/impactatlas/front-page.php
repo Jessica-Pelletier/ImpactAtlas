@@ -7,14 +7,39 @@ get_header();
 
 ?>
 <!--leaflet.js map-->
-<div id="map"></div>
-<!-- <script> const map = L.map( 'map' ).setView( [ 51.505, -0.09 ], 13 );
 
-L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	maxZoom: 19,
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-} ).addTo( map );
-</script> -->
+
+<div class="container text-center">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div id="map"></div>
+        </div>
+
+    
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12 py-2">Right item 1</div>
+                <div class="col-12 py-2">Right item 2</div>
+                <div class="col-12 py-2">Right item 3</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php get_template_part('template-parts/join') ?>
 <?php get_template_part('template-parts/featured') ?>
 
