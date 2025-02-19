@@ -211,3 +211,12 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 }
+
+
+//leaflet scripts
+function enqueue_leaflet_script() {
+    wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet/dist/leaflet.js', array(), null, true);
+    wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet/dist/leaflet.css');
+    wp_enqueue_script('custom-map', get_template_directory_uri() . '/js/main.js', array('leaflet-js'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_leaflet_script');

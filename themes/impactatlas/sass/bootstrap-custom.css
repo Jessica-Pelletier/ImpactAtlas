@@ -12035,6 +12035,11 @@ li {
   font-size: 1.2rem;
 }
 
+/*Leaflet js */
+#map {
+  height: 180px;
+}
+
 /* hero  */
 .carousel-caption {
   padding-bottom: 16%;
