@@ -10,6 +10,7 @@ get_header();
 
 
 <div class="container text-center">
+    <div><h2>A Year of impact</h1></div>
     <div class="row">
 
         <div class="col-md-6">
@@ -26,11 +27,6 @@ get_header();
         </div>
     </div>
 </div>
-
-
-
-
-
 
 
 

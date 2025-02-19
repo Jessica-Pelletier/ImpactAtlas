@@ -215,8 +215,90 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 //leaflet scripts
 function enqueue_leaflet_script() {
-    wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet/dist/leaflet.js', array(), null, true);
-    wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet/dist/leaflet.css');
-    wp_enqueue_script('custom-map', get_template_directory_uri() . '/js/main.js', array('leaflet-js'), null, true);
+    // Enqueue Leaflet CSS
+    wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css', array(), '1.7.1');
+    
+    // Enqueue Leaflet JS
+    wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js', array(), '1.7.1', true);
+    
+    // Enqueue custom map script
+    wp_enqueue_script(
+        'custom-map', 
+        get_template_directory_uri() . '/js/main.js', 
+        array('jquery', 'leaflet-js'), 
+        filemtime(get_template_directory() . '/js/main.js'), 
+        true
+    );
+    
+    // Localize script with map data
+    wp_localize_script('custom-map', 'mapData', array(
+        'ajaxUrl' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('map_data_nonce')
+    ));
 }
 add_action('wp_enqueue_scripts', 'enqueue_leaflet_script');
+
+
+
+function get_map_markers() {
+    check_ajax_referer('map_data_nonce', 'nonce');
+    
+    $args = array(
+        'post_type' => 'articles', // Ensure this matches your custom post type
+        'posts_per_page' => -1,
+        'date_query' => array(
+            array(
+                'year' => 2025, // Specify the year 2025
+            ),
+        ),
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => 'latitude', // Updated to match your ACF field name
+                'compare' => 'EXISTS'
+            ),
+            array(
+                'key' => 'longitude', // Updated to match your ACF field name
+                'compare' => 'EXISTS'
+            )
+        )
+    );
+    
+    $query = new WP_Query($args);
+    $markers = array();
+    
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            
+            // Get latitude and longitude using the correct field names
+            $latitude = get_field('latitude');
+            $longitude = get_field('longitude');
+            
+            // Additional safety checks
+            if (empty($latitude) || empty($longitude)) {
+                continue;
+            }
+            
+            // Get categories
+            $categories = get_the_terms(get_the_ID(), 'article_categories');
+            $category_name = $categories ? $categories[0]->name : 'Uncategorized';
+            
+            $markers[] = array(
+                'title' => get_the_title(),
+                'excerpt' => wp_trim_words(get_the_content(), 20), // Changed from 'what' to get_the_content()
+                'permalink' => get_permalink(),
+                'lat' => floatval($latitude),
+                'lng' => floatval($longitude),
+                'category' => $category_name,
+                'date' => get_the_date('Y-m-d')
+            );
+        }
+        wp_reset_postdata();
+    }
+    
+    wp_send_json($markers);
+    wp_die();
+}
+add_action('wp_ajax_get_map_markers', 'get_map_markers');
+add_action('wp_ajax_nopriv_get_map_markers', 'get_map_markers');

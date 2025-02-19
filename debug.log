@@ -189,3 +189,7 @@ Stack trace:
 [19-Feb-2025 17:19:00 UTC]   Automatic theme updates complete.
 [19-Feb-2025 17:19:00 UTC] Automatic updates complete.
 [19-Feb-2025 18:21:35 UTC] PHP Deprecated:  Function the_block_template_skip_link is <strong>deprecated</strong> since version 6.4.0! Use wp_enqueue_block_template_skip_link() instead. in /Applications/MAMP/htdocs/ImpactAtlas/wp-includes/functions.php on line 6114
+[19-Feb-2025 20:19:05 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/front-page.php on line 89
+[19-Feb-2025 20:20:43 UTC] PHP Fatal error:  Cannot redeclare get_map_markers() (previously declared in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/functions.php:228) in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/front-page.php on line 73
+[19-Feb-2025 20:22:29 UTC] PHP Fatal error:  Cannot redeclare get_map_markers() (previously declared in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/functions.php:241) in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/front-page.php on line 73
+[19-Feb-2025 20:22:31 UTC] PHP Fatal error:  Cannot redeclare get_map_markers() (previously declared in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/functions.php:241) in /Applications/MAMP/htdocs/ImpactAtlas/wp-content/themes/impactatlas/front-page.php on line 73
