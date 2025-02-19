@@ -2,26 +2,61 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	const mapElement = document.getElementById( 'map' );
 
 	if ( mapElement ) {
-		console.log( 'Map element found, initializing Leaflet' );
+		// Category colors with more flexible matching
+		const categoryColors = {
+			default: '#3388ff',
+			environment: '#2ecc71',
+			environmental: '#2ecc71',
+			technology: '#e74c3c',
+			social: '#1abc9c',
+			economic: '#34495e',
+			successstories: '#9b59b6',
+		};
+
+		// Enhanced marker icon creation function
+		function getMarkerIcon( category ) {
+			// More aggressive normalization
+			const normalizedCategory = category.toLowerCase().replace( /[^a-z]/g, '' );
+
+			// Try multiple matching strategies
+			const matchedColor =
+                categoryColors[ normalizedCategory ] ||
+                categoryColors[ normalizedCategory.replace( 'al', '' ) ] ||
+                categoryColors.default;
+
+			return L.divIcon( {
+				className: 'custom-div-icon',
+				html: `<div style='
+                    background-color:${ matchedColor };
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50% 50% 50% 0;
+                    position: absolute;
+                    transform: rotate(-45deg);
+                    left: 50%;
+                    top: 50%;
+                    margin: -15px 0 0 -15px;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+                ' class='marker-pin'></div>`,
+				iconSize: [ 30, 42 ],
+				iconAnchor: [ 15, 42 ],
+			} );
+		}
 
 		// Initialize map
 		const map = L.map( 'map' ).setView( [ 0, 0 ], 1 );
-		console.log( 'Map initialized' );
 
 		// Add tile layer
 		L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 		} ).addTo( map );
-		console.log( 'Tile layer added' );
 
 		// Ensure mapData is available
 		if ( typeof mapData !== 'undefined' ) {
-			console.log( 'MapData found:', mapData );
-
 			// Use a timeout to ensure fetch doesn't hang
 			const controller = new AbortController();
-			const timeoutId = setTimeout( () => controller.abort(), 10000 ); // 10-second timeout
+			const timeoutId = setTimeout( () => controller.abort(), 10000 );
 
 			fetch( mapData.ajaxUrl, {
 				method: 'POST',
@@ -36,42 +71,54 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			} )
 				.then( ( response ) => {
 					clearTimeout( timeoutId );
-					console.log( 'Fetch response received' );
+
 					if ( ! response.ok ) {
 						throw new Error( `HTTP error ${ response.status }` );
 					}
 					return response.json();
 				} )
 				.then( ( data ) => {
-					console.log( 'Markers data:', data );
-
 					if ( Array.isArray( data ) && data.length > 0 ) {
+						const markerGroup = L.layerGroup().addTo( map );
+
 						data.forEach( ( marker ) => {
-							// Create a custom marker with a popup
-							const leafletMarker = L.marker( [ marker.lat, marker.lng ] )
-								.addTo( map )
-								.bindPopup( `
+							try {
+								// Create a custom marker with a popup
+								const markerIcon = getMarkerIcon( marker.category );
+
+								const leafletMarker = L.marker(
+									[ marker.lat, marker.lng ],
+									{ icon: markerIcon }
+								)
+									.bindPopup( `
+                                        <div class="leaflet-card">
                                 <h4>${ marker.title }</h4>
-                                <p>${ marker.excerpt }</p>
+                                <p>${ marker.category }</p>
                                 <p>Date: ${ marker.date }</p>
-                                <a href="${ marker.permalink }">Read more</a>
+                                <a href="${ marker.permalink }">Read more</a></div>
                             ` );
 
-							// Optional: Add a custom class based on category
-							leafletMarker.options.className = `marker-${ marker.category.toLowerCase().replace( /\s+/g, '-' ) }`;
+								markerGroup.addLayer( leafletMarker );
+							} catch ( markerError ) {
+
+							}
 						} );
-						console.log( `Added ${ data.length } markers` );
+
+						// Fit map to markers
+						map.fitBounds( markerGroup.getBounds(), {
+							padding: [ 50, 50 ],
+						} );
 					} else {
-						console.log( 'No markers found or invalid data format' );
+
 					}
 				} )
 				.catch( ( error ) => {
-					console.error( 'Error fetching markers:', error );
+
 				} );
 		} else {
-			console.error( 'mapData is undefined' );
+
 		}
 	} else {
-		console.error( 'Map element not found' );
+
 	}
 } );

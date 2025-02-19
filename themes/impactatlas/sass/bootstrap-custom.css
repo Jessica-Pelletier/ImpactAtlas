@@ -12054,6 +12054,10 @@ li {
   width: 50%;
 }
 
+.leaflet-card h4, .leaflet-card .h4 {
+  font-size: 16px;
+}
+
 /* hero  */
 .carousel-caption {
   padding-bottom: 16%;
