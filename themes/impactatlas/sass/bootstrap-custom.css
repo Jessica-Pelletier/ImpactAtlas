@@ -12058,6 +12058,11 @@ li {
   padding: 3px;
 }
 
+.meta-data {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* About us */
 .key-values .card-title {
   color: #09739A;

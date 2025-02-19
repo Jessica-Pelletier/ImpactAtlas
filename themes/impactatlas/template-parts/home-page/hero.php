@@ -53,11 +53,13 @@
     <div class="carousel-item">
       <img src="<?php echo $thirdslideimage['url'] ?>" class="d-block w-100" alt="...">
       <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-md-block ">
+ 
         <h1> <?php echo $thirdslidelabel ?> </h1>
         <h2> <?php echo $thirdslidesubheading ?> <h2>
 
         <a href="<?php echo get_permalink(37); ?>" class="btn btn-primary ms-3">
+
     <?php echo $thirdslidecta ?>
 </a>
 
