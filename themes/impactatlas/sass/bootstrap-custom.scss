@@ -1,5 +1,6 @@
 $primary: #09739A;    
 $secondary: #EAC81F;  
+$dark-secondary: #A88F10;
 $success: #28a745;    
 $info: #91ADF3;       
 $warning: #e47c09;    
@@ -135,7 +136,7 @@ padding-bottom: 16%;
 
 .single .category {
   display: inline-block;
- background-color: $secondary;
+ background-color: $dark-secondary;
  border-radius: 2px;
  padding: 3px;
 }
