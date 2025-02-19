@@ -4,13 +4,12 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	if ( mapElement ) {
 		// Category colors with more flexible matching
 		const categoryColors = {
-			default: '#3388ff',
-			environment: '#2ecc71',
-			environmental: '#2ecc71',
-			technology: '#e74c3c',
-			social: '#1abc9c',
-			economic: '#34495e',
-			successstories: '#9b59b6',
+			default: '#3388ff', //the leaflet blue
+			environment: '#2ecc71', //green
+			technology: '#e74c3c', //vermillion
+			social: '#DF7D3B', //orange
+			economic: '#34495e', //charcoal
+			successstories: '#9b59b6', //purple
 		};
 
 		// Enhanced marker icon creation function
