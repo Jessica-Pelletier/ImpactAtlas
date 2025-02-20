@@ -141,12 +141,16 @@ margin: 0
 .banner {
   background-color: $secondary;
   height: 30px;
+
 }
 .carousel-control-prev,
 .carousel-control-next {
     display: none;
 }
-
+.banner a {
+  text-decoration: none;
+  color: black;
+}
 
 
 /* Articles */

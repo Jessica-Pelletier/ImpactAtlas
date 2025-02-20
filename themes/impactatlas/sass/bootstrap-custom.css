@@ -12082,6 +12082,11 @@ li {
   display: none;
 }
 
+.banner a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Articles */
 .articles .btn {
   color: #09739a;
