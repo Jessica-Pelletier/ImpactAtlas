@@ -13,7 +13,7 @@ get_header();
 
 <div class="container text-center">
 
-    <div class="row">
+    <div class="row bg-light">
     <div class="col-md-8">
     <div><h2>A Year of global impact</h2></div>
 </div>
