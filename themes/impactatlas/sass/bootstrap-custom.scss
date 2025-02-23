@@ -23,6 +23,7 @@ $theme-colors: (
 $extralarge: 3.4rem;
 $large: 2.5rem;
 $medium: 1.2rem;
+$small: 1rem;
 $body: 18px;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -54,6 +55,10 @@ h3 {
   font-size: $medium;
 }
 
+h4{ font-size: $small;
+
+}
+
 p {
   font-size: $body;
 }
@@ -79,6 +84,15 @@ p {
 .related-article p {
   font-family: "Newsreader", serif;
 }
+
+//leaflet map legend colors
+.blue { background-color: #3388ff}
+.green { background-color: #2ecc71}
+.vermillion { background-color: #e74c3c}
+.orange {background-color: #df7d3b}
+.charcoal {background-color: #34495e}
+.purple { background-color: #9b59b6}
+
 
 /* Header styles */
 .menu-item a {
@@ -150,6 +164,11 @@ margin: 0
 .banner a {
   text-decoration: none;
   color: black;
+}
+
+.legend-icon {
+  width: 10px;
+  height: 10px;
 }
 
 

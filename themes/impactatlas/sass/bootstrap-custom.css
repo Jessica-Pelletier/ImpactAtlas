@@ -11993,6 +11993,10 @@ h3, .h3 {
   font-size: 1.2rem;
 }
 
+h4, .h4 {
+  font-size: 1rem;
+}
+
 p {
   font-size: 18px;
 }
@@ -12017,6 +12021,30 @@ p {
 .card-text,
 .related-article p {
   font-family: "Newsreader", serif;
+}
+
+.blue {
+  background-color: #3388ff;
+}
+
+.green {
+  background-color: #2ecc71;
+}
+
+.vermillion {
+  background-color: #e74c3c;
+}
+
+.orange {
+  background-color: #df7d3b;
+}
+
+.charcoal {
+  background-color: #34495e;
+}
+
+.purple {
+  background-color: #9b59b6;
 }
 
 /* Header styles */
@@ -12085,6 +12113,11 @@ li {
 .banner a {
   text-decoration: none;
   color: black;
+}
+
+.legend-icon {
+  width: 10px;
+  height: 10px;
 }
 
 /* Articles */
