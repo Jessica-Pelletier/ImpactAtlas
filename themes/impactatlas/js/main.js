@@ -2,7 +2,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	const mapElement = document.getElementById( 'map' );
 
 	if ( mapElement ) {
-		// Category colors with more flexible matching
 		const categoryColors = {
 			default: '#3388ff', //the leaflet blue
 			environment: '#2ecc71', //green
@@ -43,7 +42,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		}
 
 		// Initialize map
-		const map = L.map( 'map' ).setView( [ 0, 0 ], 1 );
+		const map = L.map( 'map' ).setView( [ 0, 0 ], 1 ).setZoom( 2 );
 
 		// Add tile layer
 		L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -53,7 +52,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
 		// Ensure mapData is available
 		if ( typeof mapData !== 'undefined' ) {
-			// Use a timeout to ensure fetch doesn't hang
 			const controller = new AbortController();
 			const timeoutId = setTimeout( () => controller.abort(), 10000 );
 
