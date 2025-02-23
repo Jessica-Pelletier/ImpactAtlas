@@ -51,6 +51,14 @@ get_header();
     </div>
 </div>
 
+<div class="container">
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col-4"><?php get_template_part('template-parts/home-page/spotlight') ?></div>
+</div>
+</div>
+
+
 
 
 
