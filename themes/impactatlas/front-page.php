@@ -13,7 +13,7 @@ get_header();
 
 <div class="container text-center">
 
-    <div class="row">
+    <div class="row bg-light">
     <div class="col-md-8">
     <div><h2>A Year of global impact</h2></div>
 </div>
@@ -57,6 +57,20 @@ get_header();
     <div class="col-4"><?php get_template_part('template-parts/home-page/spotlight') ?></div>
 </div>
 </div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-8">stuff</div>
+    <div class="col-md-4"><?php get_template_part('template-parts/home-page/spotlight') ?></div>
+</div>
+</div>
+
+
+
 
 
 
