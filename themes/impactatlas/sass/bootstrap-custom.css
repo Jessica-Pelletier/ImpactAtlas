@@ -12024,7 +12024,7 @@ p {
 }
 
 .blue {
-  background-color: #3388ff;
+  background-color: #09739a;
 }
 
 .green {
@@ -12118,6 +12118,10 @@ li {
 .legend-icon {
   width: 10px;
   height: 10px;
+}
+
+.involved-card .btn {
+  color: white;
 }
 
 /* Articles */

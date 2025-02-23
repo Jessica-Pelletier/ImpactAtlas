@@ -86,7 +86,7 @@ p {
 }
 
 //leaflet map legend colors
-.blue { background-color: #3388ff}
+.blue { background-color: #09739a}
 .green { background-color: #2ecc71}
 .vermillion { background-color: #e74c3c}
 .orange {background-color: #df7d3b}
@@ -123,12 +123,14 @@ li {
   height: 50vh;
   min-height: 40vh;
   background-color: #f0f0f0;
+
 }
 
 .map {
   height: 40vh;
   display: flex;
   width: 50%;
+
 }
 
 .leaflet-card h4{
@@ -169,6 +171,11 @@ margin: 0
 .legend-icon {
   width: 10px;
   height: 10px;
+}
+
+
+.involved-card .btn {
+  color: white;
 }
 
 
