@@ -11,7 +11,6 @@ get_header();
 <!--leaflet.js map section-->
 
 <div class="container text-center ">
-
     <div class="row">
         <div class="col-md-12 pt-4">
             <div>
@@ -22,11 +21,7 @@ get_header();
 
             <div id="map"></div>
         </div>
-
-
     </div>
-
-
 </div>
 
 
@@ -37,14 +32,7 @@ get_header();
             <p>Our map documents verfified solutions and positive initiatives completed throughout 2024, creating an atlas of global progress.</p>
 
         </div>
-
-
         <div class="row g-4">
-
-
-
-
-
             <div class="col-md-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -76,16 +64,12 @@ get_header();
                                 <h4>Technology</h4>
                             </div>
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
 
 
-<!-- Make these bars represent % solutions in that category? -->
+            <!-- Make these bars represent % solutions in that category? -->
             <div class="col-md-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -140,39 +124,54 @@ get_header();
 
 
 
-</div>
+        </div>
 
 </section>
 
 
 
+<?php 
+$education_access_query = new WP_Query(array(
+    'post_type' => 'articles',
+    'posts_per_page' => 4,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'article_categories',
+            'field' => 'term_id',
+            'terms' => '20',
+            'include_children' => false
+        )
+    ),
+    'orderby' => 'date',
+    'order' => 'DESC'
+));
+ 
+if ($education_access_query->have_posts()) :
+   
 
 
-
-
-
-
-
-
-
-
-
-
-
+    while ($education_access_query->have_posts()) : $education_access_query->the_post();
+    ?>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">stuff</div>
-        <div class="col-md-4"><?php get_template_part('template-parts/home-page/spotlight') ?></div>
+        <div class="col-md-8"><h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3></div>
     </div>
 </div>
 
+<?php
+    endwhile;
+    
+   
+    wp_reset_postdata();
+endif;
+?>
 
-
-
-
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"><?php get_template_part('template-parts/home-page/spotlight') ?></div>
+    </div>
+</div>
 
 
 
