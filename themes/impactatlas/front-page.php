@@ -130,50 +130,52 @@ get_header();
 
 
 
-<?php 
-$education_access_query = new WP_Query(array(
-    'post_type' => 'articles',
-    'posts_per_page' => 4,
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'article_categories',
-            'field' => 'term_id',
-            'terms' => '20',
-            'include_children' => false
-        )
-    ),
-    'orderby' => 'date',
-    'order' => 'DESC'
-));
- 
-if ($education_access_query->have_posts()) :
-   
-
-
-    while ($education_access_query->have_posts()) : $education_access_query->the_post();
-    ?>
-
 <div class="container">
     <div class="row">
-        <div class="col-md-8"><h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3></div>
-    </div>
-</div>
+        <div class="col-md-8">
+            <h3>New articles on education access</h3>
+            
+            <div class="row">
+                <?php 
+                $education_access_query = new WP_Query(array(
+                    'post_type' => 'articles',
+                    'posts_per_page' => 4,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'article_categories',
+                            'field' => 'term_id',
+                            'terms' => '20',
+                            'include_children' => false
+                        )
+                    ),
+                    'orderby' => 'date',
+                    'order' => 'DESC'
+                ));
+                
+                if ($education_access_query->have_posts()) :
+                    while ($education_access_query->have_posts()) : $education_access_query->the_post();
+                    ?>
+                    <div class="col-3">
+                        <div class="card h-100 p-2">
+                            <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <p class="text-muted small"><?php echo get_the_date('F j, Y'); ?></p>
+                        </div>
+                    </div>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+                ?>
+            </div>
+        </div>
 
-<?php
-    endwhile;
-    
-   
-    wp_reset_postdata();
-endif;
-?>
 
-<div class="container">
-    <div class="row">
+
         <div class="col-md-4"><?php get_template_part('template-parts/home-page/spotlight') ?></div>
-    </div>
+   
+
 </div>
-
-
+</div>
 
 
 
