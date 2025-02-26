@@ -302,3 +302,9 @@ function get_map_markers() {
 }
 add_action('wp_ajax_get_map_markers', 'get_map_markers');
 add_action('wp_ajax_nopriv_get_map_markers', 'get_map_markers');
+
+function enqueue_electricity_access_scripts() {
+    wp_enqueue_script('chartjs', 'https://cdn.jsdelivr.net/npm/chart.js', array(), '4.3.0', true);
+    wp_enqueue_script('electricity-access-script', get_template_directory_uri() . '/js/world-bank-electricity-access-script.js', array('chartjs'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_electricity_access_scripts');

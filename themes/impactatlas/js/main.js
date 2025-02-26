@@ -119,3 +119,130 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
 	}
 } );
+
+
+// API calls
+(() => {
+    window.addEventListener('load', (event) => {
+        fetchElectricityAccessData();
+    });
+
+    async function fetchElectricityAccessData() {
+        // World Bank API endpoint for electricity access percentage (global)
+        const apiUrl = 'https://api.worldbank.org/v2/country/1W/indicator/EG.ELC.ACCS.ZS?format=json&date=1998:2022';
+
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+    
+            if (data && data[1]) {
+                const processedData = processWorldBankData(data[1]);
+                renderElectricityAccessChart(processedData);
+            } else {
+                throw new Error('No data found');
+            }
+        } catch (error) {
+            handleError(error);
+        }
+    }
+
+    function processWorldBankData(apiData) {
+ 
+        return apiData
+            .filter(entry => entry.value !== null)
+            .sort((a, b) => a.date - b.date)
+            .map(entry => ({
+                year: entry.date,
+                accessPercentage: entry.value
+            }));
+    }
+
+    function renderElectricityAccessChart(data) {
+        const container = document.getElementById('electricity-access-container');
+        const chartCanvas = document.getElementById('electricity-access-chart');
+
+        if (!container || !chartCanvas) {
+            console.error('Required DOM elements not found');
+            return;
+        }
+
+  
+        container.innerHTML = `
+            <h3>Global Electricity Access Percentage</h3>
+            <p>Percentage of population with access to electricity worldwide</p>
+        `;
+
+
+        if (typeof Chart === 'undefined') {
+            console.error('Chart.js is not loaded');
+            container.innerHTML += '<p>Error: Chart.js library not found</p>';
+            return;
+        }
+
+     
+        new Chart(chartCanvas, {
+            type: 'line',
+            data: {
+                labels: data.map(d => d.year),
+                datasets: [{
+                    label: 'Electricity Access (%)',
+                    data: data.map(d => d.accessPercentage),
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Global Electricity Access (1998-2022)'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Electricity Access: ${context.parsed.y.toFixed(2)}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: {
+                            display: true,
+                            text: 'Percentage of Population'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toFixed(1) + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function handleError(error) {
+        console.error('Error fetching electricity access data:', error);
+        const container = document.getElementById('electricity-access-container');
+        if (container) {
+            container.innerHTML = `
+                <div class="error-message">
+                    <h3>Data Retrieval Error</h3>
+                    <p>Unable to fetch data: ${error.message}</p>
+                    <p>Please check your internet connection and try again.</p>
+                </div>
+            `;
+        }
+    }
+})();

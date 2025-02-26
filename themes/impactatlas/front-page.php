@@ -14,7 +14,8 @@ get_header();
     <div class="row">
         <div class="col-md-12 pt-4">
             <div>
-                <h2>A Year of global impact</h2>
+            <h2> Tracking Global Progress in 2024 </h2>
+            <p>Our map documents verfified solutions and positive initiatives completed throughout 2024, creating an atlas of global progress.</p>
             </div>
         </div>
         <div class="col">
@@ -28,8 +29,7 @@ get_header();
 <section class="map-info py-4">
     <div class="container">
         <div class="col-lg-8">
-            <h2> Tracking Global Progress in 2024 </h2>
-            <p>Our map documents verfified solutions and positive initiatives completed throughout 2024, creating an atlas of global progress.</p>
+         
 
         </div>
         <div class="row g-4">
@@ -167,6 +167,13 @@ get_header();
                 endif;
                 ?>
             </div>
+<div><div>
+<div id="electricity-access-container">Loading electricity access data...</div>
+<canvas id="electricity-access-chart"></canvas>
+  
+</div>
+</div>
+       
         </div>
 
 
