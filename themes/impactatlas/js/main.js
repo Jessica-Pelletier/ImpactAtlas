@@ -128,14 +128,12 @@ document.addEventListener( 'DOMContentLoaded', function() {
     });
 
     async function fetchElectricityAccessData() {
-        // World Bank API endpoint for electricity access percentage (global)
         const apiUrl = 'https://api.worldbank.org/v2/country/1W/indicator/EG.ELC.ACCS.ZS?format=json&date=1998:2022';
 
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
 
-    
             if (data && data[1]) {
                 const processedData = processWorldBankData(data[1]);
                 renderElectricityAccessChart(processedData);
@@ -148,7 +146,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
     }
 
     function processWorldBankData(apiData) {
- 
         return apiData
             .filter(entry => entry.value !== null)
             .sort((a, b) => a.date - b.date)
@@ -159,90 +156,99 @@ document.addEventListener( 'DOMContentLoaded', function() {
     }
 
     function renderElectricityAccessChart(data) {
-        const container = document.getElementById('electricity-access-container');
+    
         const chartCanvas = document.getElementById('electricity-access-chart');
-
-        if (!container || !chartCanvas) {
-            console.error('Required DOM elements not found');
+        
+        if (!chartCanvas) {
+            console.error("Canvas element not found");
             return;
         }
-
-  
-        container.innerHTML = `
-            <h3>Global Electricity Access Percentage</h3>
-            <p>Percentage of population with access to electricity worldwide</p>
-        `;
-
-
+        
         if (typeof Chart === 'undefined') {
-            console.error('Chart.js is not loaded');
-            container.innerHTML += '<p>Error: Chart.js library not found</p>';
+            console.error("Chart.js not loaded");
             return;
         }
-
-     
-        new Chart(chartCanvas, {
-            type: 'line',
-            data: {
-                labels: data.map(d => d.year),
-                datasets: [{
-                    label: 'Electricity Access (%)',
-                    data: data.map(d => d.accessPercentage),
-                    borderColor: 'rgb(75, 192, 192)',
-                    tension: 0.1,
-                    fill: false
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Global Electricity Access (1998-2022)'
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return `Electricity Access: ${context.parsed.y.toFixed(2)}%`;
-                            }
-                        }
-                    }
+        
+      
+        const existingChart = Chart.getChart(chartCanvas);
+        if (existingChart) {
+            existingChart.destroy();
+        }
+        
+  
+        try {
+            new Chart(chartCanvas, {
+                type: 'line',
+                data: {
+                    labels: data.map(d => d.year),
+                    datasets: [{
+                        label: 'Electricity Access (%)',
+                        data: data.map(d => d.accessPercentage),
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1,
+                        fill: false
+                    }]
                 },
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        title: {
-                            display: true,
-                            text: 'Percentage of Population'
-                        },
-                        ticks: {
-                            callback: function(value) {
-                                return value.toFixed(1) + '%';
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `Electricity Access: ${context.parsed.y.toFixed(2)}%`;
+                                }
                             }
                         }
                     },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Year'
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Percentage of Population'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toFixed(1) + '%';
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Year'
+                            }
                         }
                     }
                 }
+            });
+        } catch (e) {
+            console.error("Error creating chart:", e);
+            
+      
+            const container = document.getElementById('electricity-access-container');
+            if (container) {
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error-message';
+                errorElement.innerHTML = `<p>Chart error: ${e.message}</p>`;
+                container.appendChild(errorElement);
             }
-        });
+        }
     }
 
     function handleError(error) {
-        console.error('Error fetching electricity access data:', error);
-        const container = document.getElementById('electricity-access-container');
-        if (container) {
-            container.innerHTML = `
-                <div class="error-message">
-                    <h3>Data Retrieval Error</h3>
-                    <p>Unable to fetch data: ${error.message}</p>
-                    <p>Please check your internet connection and try again.</p>
-                </div>
-            `;
+        console.error('API error:', error);
+        
+        const chartCanvas = document.getElementById('electricity-access-chart');
+        if (chartCanvas) {
+        
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'chart-error';
+            errorDiv.innerHTML = `<p>Unable to load data: ${error.message}</p>`;
+            
+      
+            chartCanvas.parentNode.insertBefore(errorDiv, chartCanvas.nextSibling);
         }
     }
 })();

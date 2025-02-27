@@ -7,7 +7,7 @@ get_header();
 
 ?>
 
-<?php get_template_part('template-parts/home-page/banner') ?>
+<!-- <?php get_template_part('template-parts/home-page/banner') ?> -->
 <!--leaflet.js map section-->
 
 <div class="container text-center ">
@@ -37,28 +37,28 @@ get_header();
                 <div class="card h-100">
                     <div class="card-body">
                         <h3 class="h5 mb-3">Solution Categories</h3>
-                        <div class="legend-item d-flex align-items-center mb-2">
+                        <div class="legend-item d-flex  ">
                             <span class="legend-icon green me-2"></span>
                             <div>
                                 <h4>Environmental</h4>
                             </div>
                         </div>
 
-                        <div class="legend-item d-flex align-items-center mb-2">
+                        <div class="legend-item d-flex  ">
                             <span class="legend-icon orange me-2"></span>
                             <div>
                                 <h4>Social</h4>
                             </div>
                         </div>
 
-                        <div class="legend-item d-flex align-items-center">
+                        <div class="legend-item d-flex ">
                             <span class="legend-icon charcoal me-2"></span>
                             <div>
                                 <h4>Economic</h4>
                             </div>
                         </div>
 
-                        <div class="legend-item d-flex align-items-center">
+                        <div class="legend-item d-flex ">
                             <span class="legend-icon vermillion me-2"></span>
                             <div>
                                 <h4>Technology</h4>
@@ -167,14 +167,24 @@ get_header();
                 endif;
                 ?>
             </div>
-<div><div>
-<div id="electricity-access-container">Loading electricity access data...</div>
-<canvas id="electricity-access-chart"></canvas>
-  
-</div>
-</div>
-       
+
+
+
+ <div class="row align-items-center mt-4">
+            <div class="col-md-6">
+                <div id="electricity-access-container">
+                    <h3>Global Electricity Access</h3>
+                    <p>Tracking worldwide progress in electricity accessibility from 1998 to 2022, highlighting significant improvements in global energy infrastructure.</p>
+                    <div><a href="https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS?locations=1W&start=1998&view=chart">View orginal data<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg></a></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <canvas id="electricity-access-chart" class="img-fluid"></canvas>
+            </div>
         </div>
+    </div>
 
 
 
@@ -186,9 +196,9 @@ get_header();
 
 
 
-
-<?php get_template_part('template-parts/join') ?>
 <?php get_template_part('template-parts/featured') ?>
+<?php get_template_part('template-parts/join') ?>
+
 
 
 
