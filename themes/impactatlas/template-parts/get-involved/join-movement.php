@@ -16,7 +16,7 @@ $joinmovementbutton = get_field('join_the_movement_button_text');
 
 
 <div>
-<button class="btn-primary btn"> <?php echo $joinmovementbutton ?> </button>
+
 </div>
 </div>
 

@@ -308,3 +308,8 @@ function enqueue_electricity_access_scripts() {
     wp_enqueue_script('electricity-access-script', get_template_directory_uri() . '/js/world-bank-electricity-access-script.js', array('chartjs'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_electricity_access_scripts');
+
+function enqueue_reliefweb_jobs_scripts() {
+    wp_enqueue_script('reliefweb-jobs-script', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_reliefweb_jobs_scripts');

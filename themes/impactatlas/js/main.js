@@ -252,3 +252,115 @@ document.addEventListener( 'DOMContentLoaded', function() {
         }
     }
 })();
+
+//Job posting from Relief Web
+document.addEventListener('DOMContentLoaded', () => {
+
+	const jobsContainer = document.getElementById('reliefweb-jobs-container');
+	if (jobsContainer) {
+	  fetchReliefWebJobs();
+	}
+  });
+  
+ //get refief jobs data 
+  async function fetchReliefWebJobs() {
+	try {
+	  const jobsContainer = document.getElementById('reliefweb-jobs-container');
+	  if (!jobsContainer) return;
+	  
+	
+	  const apiUrl = new URL('https://api.reliefweb.int/v1/jobs');
+	  apiUrl.searchParams.append('appname', 'impact-atlas.org');
+	  apiUrl.searchParams.append('limit', '10');
+	  
+//Add these fields to be searched
+	  ['title', 'date', 'url', 'source'].forEach(field => {
+		apiUrl.searchParams.append('fields[include][]', field);
+	  });
+	  
+
+	  const response = await fetch(apiUrl);
+	  const data = await response.json();
+	  
+
+	  const table = document.createElement('table');
+	  table.className = 'jobs-table';
+	  
+
+	  const thead = document.createElement('thead');
+	  thead.innerHTML = `
+		<tr>
+		  <th class="job-title-header">Job Title</th>
+		  <th class="job-org-header">Organization</th>
+		  <th class="job-posted-header">Posted Date</th>
+		  <th class="job-closing-header">Closing Date</th>
+		</tr>
+	  `;
+	  table.appendChild(thead);
+	  
+
+	  const tbody = document.createElement('tbody');
+	  
+	
+	  data.data.forEach((job) => {
+		const fields = job.fields || {};
+
+
+		const row = document.createElement('tr');
+		row.className = 'job-row';
+		
+
+		const titleCell = document.createElement('td');
+		titleCell.className = 'job-title-cell';
+		titleCell.innerHTML = `
+		  <a href="${fields.url || '#'}" target="_blank" class="job-link">
+			${fields.title || 'No Title'}
+		  </a>
+		`;
+		
+
+		const orgCell = document.createElement('td');
+		orgCell.className = 'job-org-cell';
+		orgCell.textContent = fields.source && fields.source.length > 0 
+		  ? fields.source[0].name 
+		  : 'Organization not specified';
+		
+		
+		const postedCell = document.createElement('td');
+		postedCell.className = 'job-posted-cell';
+		postedCell.textContent = fields.date && fields.date.created 
+		  ? new Date(fields.date.created).toLocaleDateString() 
+		  : 'Not available';
+		
+
+		const closingCell = document.createElement('td');
+		closingCell.className = 'job-closing-cell';
+		closingCell.textContent = fields.date && fields.date.closing 
+		  ? new Date(fields.date.closing).toLocaleDateString() 
+		  : 'Not specified';
+		
+
+		row.appendChild(titleCell);
+		row.appendChild(orgCell);
+		row.appendChild(postedCell);
+		row.appendChild(closingCell);
+
+		tbody.appendChild(row);
+	  });
+	  
+	
+	  table.appendChild(tbody);
+	  
+
+	  jobsContainer.innerHTML = '';
+	  jobsContainer.appendChild(table);
+	  
+	} catch (error) {
+	  console.error('Error:', error);
+
+	  const jobsContainer = document.getElementById('reliefweb-jobs-container');
+	  if (jobsContainer) {
+		jobsContainer.innerHTML = `<p class="jobs-error">Failed to load jobs: ${error.message}</p>`;
+	  }
+	}
+  }
