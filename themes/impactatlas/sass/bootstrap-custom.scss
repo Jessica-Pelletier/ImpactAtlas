@@ -254,6 +254,10 @@ text-decoration: underline;
   color: $dark-secondary;
 }
 
+.cpt-image {
+  max-height: 15em;
+}
+
 /* About us */
 .key-values .card-title {
   color: $primary;
