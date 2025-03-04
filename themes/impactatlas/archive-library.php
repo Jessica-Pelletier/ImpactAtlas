@@ -68,30 +68,51 @@
                         <?php } ?>
                     </div>
 
-                    <div class="mb-4">
-                        <label class="form-label fw-bold">Tags</label>
-                        <?php
-                        $tags = get_terms([
-                            'taxonomy' => 'post_tag', // Use 'post_tag' for standard WordPress tags
-                            'hide_empty' => true
-                        ]);
+                    <div class="card mb-4">
+    <div class="card-header">
+        <strong>Tags</strong>
+    </div>
+    <div class="card-body p-0">
+        <div class="overflow-auto" style="max-height: 200px;">
+            <div class="p-3">
+                <?php
+                $tags = get_terms([
+                    'taxonomy' => 'post_tag',
+                    'hide_empty' => true
+                ]);
 
-                        foreach ($tags as $tag) {
-                            $checked = (isset($_GET['tag_filter']) &&
-                                (is_array($_GET['tag_filter']) &&
-                                    in_array($tag->term_id, $_GET['tag_filter']))) ? 'checked' : '';
-                        ?>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox"
-                                    name="tag_filter[]"
-                                    id="tag-<?php echo $tag->term_id; ?>"
-                                    value="<?php echo $tag->term_id; ?>" <?php echo $checked; ?>>
-                                <label class="form-check-label" for="tag-<?php echo $tag->term_id; ?>">
-                                    <?php echo $tag->name; ?>
-                                </label>
-                            </div>
-                        <?php } ?>
+                foreach ($tags as $tag) {
+                    $checked = (isset($_GET['tag_filter']) && 
+                              (is_array($_GET['tag_filter']) && 
+                               in_array($tag->term_id, $_GET['tag_filter']))) ? 'checked' : '';
+                ?>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox"
+                            name="tag_filter[]"
+                            id="tag-<?php echo $tag->term_id; ?>"
+                            value="<?php echo $tag->term_id; ?>" <?php echo $checked; ?>>
+                        <label class="form-check-label" for="tag-<?php echo $tag->term_id; ?>">
+                            <?php echo $tag->name; ?>
+                        </label>
                     </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tagSelect = document.querySelector('select[name="tag_filter[]"]');
+    
+    // Enable multiple selection with checkboxes
+    tagSelect.setAttribute('multiple', 'multiple');
+    
+    // Optional: add some styling to make it look more like a multi-select
+    tagSelect.style.height = 'auto';
+    tagSelect.style.minHeight = '100px';
+});
+</script>
 
 
 
