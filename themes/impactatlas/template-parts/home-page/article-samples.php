@@ -31,7 +31,10 @@ $articles_query = new WP_Query(array(
     
             $image = get_field('cpt_image'); 
             if ($image) : ?>
+<div class="card-img-container">
               <img src="<?php echo esc_url($image['url']); ?>" class="card-img-top" alt="<?php echo esc_attr($image['alt']); ?>">
+            </div>
+
             <?php endif; ?>
             <div class="card-body">
               <h5 class="card-title"><?php the_title(); ?></h5>
