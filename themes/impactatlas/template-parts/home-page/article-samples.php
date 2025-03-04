@@ -22,6 +22,7 @@ $articles_query = new WP_Query(array(
 ?>
 
 <div class="container py-4">
+    <h3>Explore Articles</h3>
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
     <?php if ($articles_query->have_posts()) : ?>
       <?php while ($articles_query->have_posts()) : $articles_query->the_post(); ?>

@@ -69,44 +69,14 @@ get_header();
             </div>
 
 
-            <!-- Make these bars represent % solutions in that category? -->
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h3 class="h5 mb-3">2024 Progress by category</h3>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-3">
-                                <h4 class="d-block">Something title</h4>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-success" style="width: 45%"></div>
-                                </div>
-                                <p class="text-muted">something something</p>
-                            </li>
-                            <li class="mb-3">
-                                <h4 class="d-block">Something title</h4>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                </div>
-                                <p class="text-muted">something something</p>
-                            </li>
-                            <li>
-                                <h4 class="d-block">Something title</h4>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-warning" style="width: 75%"></div>
-                                </div>
-                                <p class="text-muted">something something</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
 
-            <div class="col-md-4">
+
+            <div class="col-md-8">
                 <div class="card h-100">
                     <div class="card-body">
                         <h3 class="h5 mb-3">Get Involved</h3>
-                        <div class="d-grid gap-2 involved-card">
+                        <div class="d-flex gap-2 involved-card">
                             <a href="<?php echo get_permalink(41); ?>" class="btn btn-outline-dark blue">Submit a Solution</a>
                             <a href="<?php echo get_permalink(35); ?> " class="btn btn-outline-dark blue">Explore Success Stories</a>
                             <a href="<?php echo get_permalink(39); ?>" class="btn btn-outline-dark blue">View Implementation Guides</a>
@@ -194,7 +164,7 @@ get_header();
                 while ($education_access_query->have_posts()) : $education_access_query->the_post();
                 ?>
                 <div class="article-item border-bottom pb-2">
-                    <h5 class="mb-1"><a href="<?php the_permalink(); ?>" class="text-decoration-none"><?php the_title(); ?></a></h5>
+                    <h5 class="mb-1"><a href="<?php the_permalink(); ?>" class="text-decoration-none headline"><?php the_title(); ?></a></h5>
                     <p class="text-muted small mb-0"><?php echo get_the_date('F j, Y'); ?></p>
                 </div>
                 <?php

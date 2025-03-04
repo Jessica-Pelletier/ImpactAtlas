@@ -12162,6 +12162,10 @@ li {
   text-decoration: underline;
 }
 
+.headline {
+  color: #0e0e10;
+}
+
 /* Articles */
 .articles .btn {
   color: #09739a;
