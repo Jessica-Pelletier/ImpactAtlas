@@ -25,10 +25,26 @@ get_header();
                                     echo '<div class="category">' . $first_term->name . '</div>';
                                 }
                                 ?>
+
+
+
+
+
                                 <span class="post-date">
                                     <?php echo get_the_date('F j, Y'); ?>
                                 </span>
                             </div>
+
+                            <?php 
+$tags = get_the_tags();
+if ($tags) {
+    echo '<div class="tags"> Tags:';
+    foreach ($tags as $tag) {
+        echo ' <span class="tag text-muted">' . $tag->name . '</span>';
+    }
+    echo '</div>';
+}
+?>
                         </div>
                     </header>
 

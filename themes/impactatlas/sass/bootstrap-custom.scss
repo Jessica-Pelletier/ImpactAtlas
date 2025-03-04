@@ -101,7 +101,7 @@ p {
 /* Header styles */
 .menu-item a {
   text-decoration: none;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: $light;
   font-size: $medium;
@@ -256,6 +256,12 @@ text-decoration: underline;
 
 .cpt-image {
   max-height: 15em;
+}
+
+.tag {
+  text-decoration: none;
+  color: $dark;
+  padding: 3px;
 }
 
 /* About us */

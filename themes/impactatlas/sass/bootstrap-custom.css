@@ -12054,7 +12054,6 @@ p {
 /* Header styles */
 .menu-item a {
   text-decoration: none;
-  text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: #f8f9fa;
   font-size: 1.2rem;
@@ -12195,6 +12194,12 @@ li {
 
 .cpt-image {
   max-height: 15em;
+}
+
+.tag {
+  text-decoration: none;
+  color: #0e0e10;
+  padding: 3px;
 }
 
 /* About us */
