@@ -129,6 +129,8 @@ get_header();
 </section>
 
 
+<?php get_template_part('template-parts/home-page/article-samples') ?>
+
 
 <div class="container">
     <div class="row">
