@@ -26,29 +26,24 @@ $articles_query = new WP_Query(array(
     <?php if ($articles_query->have_posts()) : ?>
       <?php while ($articles_query->have_posts()) : $articles_query->the_post(); ?>
         <div class="col">
-          <div class="card h-100">
+          <a href="<?php the_permalink(); ?>" class="article-card">
             <?php 
-    
-            $image = get_field('cpt_image'); 
+            $image = get_field('cpt_image');
             if ($image) : ?>
-<div class="card-img-container">
-              <img src="<?php echo esc_url($image['url']); ?>" class="card-img-top" alt="<?php echo esc_attr($image['alt']); ?>">
-            </div>
-
+              <div class="card-img-container">
+                <img src="<?php echo esc_url($image['url']); ?>" class="card-img-top" alt="<?php echo esc_attr($image['alt']); ?>">
+              </div>
             <?php endif; ?>
-            <div class="card-body">
-              <h5 class="card-title"><?php the_title(); ?></h5>
-              <p class="card-text"><?php echo wp_trim_words(get_field('what'), 20, '...'); ?></p>
-              <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-sm">Read More</a>
+            <div>
+              <h5 class="mb-2"><?php the_title(); ?></h5>
+              <p class="text-muted mb-0"><?php echo wp_trim_words(get_field('what'), 10, '...'); ?></p>
             </div>
-          </div>
+          </a>
         </div>
       <?php endwhile; ?>
       <?php wp_reset_postdata(); ?>
-    <?php else : ?>
-      <div class="col-12 text-center">
-        <p>No articles with images found.</p>
-      </div>
+
+    
     <?php endif; ?>
   </div>
 </div>

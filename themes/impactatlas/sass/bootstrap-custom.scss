@@ -197,12 +197,26 @@ margin: 0
   height: 200px;
   overflow: hidden;
   position: relative;
+  border-radius: 8px;
 }
 
 .card-img-top {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.article-card {
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: $dark;
+ 
+
+}
+
+.article-card:hover {
+text-decoration: underline;
 }
 
 

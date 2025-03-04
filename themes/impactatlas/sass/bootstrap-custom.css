@@ -12141,6 +12141,7 @@ li {
   height: 200px;
   overflow: hidden;
   position: relative;
+  border-radius: 8px;
 }
 
 .card-img-top {
@@ -12148,6 +12149,17 @@ li {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.article-card {
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: #0e0e10;
+}
+
+.article-card:hover {
+  text-decoration: underline;
 }
 
 /* Articles */
