@@ -79,13 +79,72 @@ $numberfour = get_field('number_four');
 
 
 <!-- Releif web opportunities  -->
-<div class="container">
+
+<section class="relief-web-section py-4">
+  <div class="container">
+    <h3 class="mb-4">Global Humanitarian Opportunities</h3>
+    
+    <!-- Filter and Search Controls -->
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <div class="btn-group" role="group" aria-label="Job type filter">
+          <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+          <button type="button" class="btn btn-outline-primary" data-filter="volunteer">Volunteer</button>
+          <button type="button" class="btn btn-outline-primary" data-filter="paid">Paid</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <input type="text" id="job-search" class="form-control" placeholder="Search opportunities...">
+      </div>
+    </div>
+
+
+
+    <div id="reliefweb-jobs-container" class="d-none">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th scope="col" class="sortable" data-sort="title">Position <i class="bi bi-arrow-down-up"></i></th>
+              <th scope="col" class="sortable" data-sort="org">Organization <i class="bi bi-arrow-down-up"></i></th>
+              <th scope="col" class="sortable" data-sort="type">Type</th>
+              <th scope="col" class="sortable" data-sort="date">Posted <i class="bi bi-arrow-down-up"></i></th>
+              <th scope="col" class="sortable" data-sort="closing">Deadline <i class="bi bi-arrow-down-up"></i></th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="jobs-table-body">
+        
+          </tbody>
+         
+        </table>
+
+        <div id="jobs-pagination" class="mt-3 d-flex justify-content-center">
+
+</div>
+      </div>
+
+      </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
 <div id="reliefweb-jobs-container">
 <ul class="jobs-list">
     
 </ul>
 </div>
-</div>
+</div> -->
 
 
 

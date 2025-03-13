@@ -255,112 +255,202 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
 //Job posting from Relief Web
 document.addEventListener('DOMContentLoaded', () => {
+	fetchReliefWebJobs();
+	
+	// Set up filter buttons
+	const filterButtons = document.querySelectorAll('[data-filter]');
+	filterButtons.forEach(button => {
+	  button.addEventListener('click', () => {
 
-	const jobsContainer = document.getElementById('reliefweb-jobs-container');
-	if (jobsContainer) {
-	  fetchReliefWebJobs();
+		filterButtons.forEach(btn => btn.classList.remove('active'));
+	
+		button.classList.add('active');
+
+		currentPage = 1; 
+		filterJobs(button.dataset.filter);
+	  });
+	});
+	
+	// Set up search
+	const searchInput = document.getElementById('job-search');
+	if (searchInput) {
+	  searchInput.addEventListener('input', () => {
+		currentPage = 1; // Reset to page 1 when searching
+		filterJobs();
+	  });
 	}
   });
   
- //get refief jobs data 
-  async function fetchReliefWebJobs() {
-	try {
-	  const jobsContainer = document.getElementById('reliefweb-jobs-container');
-	  if (!jobsContainer) return;
-	  
+  // Store all jobs globally so we can filter them
+  let allJobs = [];
+  let currentPage = 1;
+  const itemsPerPage = 10; 
+  
+  function fetchReliefWebJobs() {
+	const jobsContainer = document.getElementById('reliefweb-jobs-container');
+	const tableBody = document.getElementById('jobs-table-body');
 	
-	  const apiUrl = new URL('https://api.reliefweb.int/v1/jobs');
-	  apiUrl.searchParams.append('appname', 'impact-atlas.org');
-	  apiUrl.searchParams.append('limit', '10');
-	  
-//Add these fields to be searched
-	  ['title', 'date', 'url', 'source'].forEach(field => {
-		apiUrl.searchParams.append('fields[include][]', field);
+	// Remove the d-none class to make the container visible
+	jobsContainer.classList.remove('d-none');
+	
+	fetch('https://api.reliefweb.int/v1/jobs?appname=impact-atlas.org&limit=30&fields[include][]=title&fields[include][]=date&fields[include][]=url&fields[include][]=source')
+	  .then(response => response.json())
+	  .then(data => {
+		// Store jobs in global variable
+		allJobs = data.data.map(job => {
+		  const fields = job.fields || {};
+		  const title = fields.title || 'No Title';
+		  const org = fields.source && fields.source.length > 0 ? fields.source[0].name : 'Not specified';
+		  const posted = fields.date && fields.date.created ? new Date(fields.date.created).toLocaleDateString() : 'N/A';
+		  const closing = fields.date && fields.date.closing ? new Date(fields.date.closing).toLocaleDateString() : 'N/A';
+		  const url = fields.url || '#';
+		  const isVolunteer = title.toLowerCase().includes('volunteer') || title.toLowerCase().includes('unpaid');
+		  
+		  return { title, org, posted, closing, url, isVolunteer };
+		});
+		
+		// Display page 1 initially
+		filterJobs();
+	  })
+	  .catch(error => {
+		tableBody.innerHTML = '<tr><td colspan="6" class="text-center">Could not load jobs.</td></tr>';
 	  });
-	  
-
-	  const response = await fetch(apiUrl);
-	  const data = await response.json();
-	  
-
-	  const table = document.createElement('table');
-	  table.className = 'jobs-table';
-	  
-
-	  const thead = document.createElement('thead');
-	  thead.innerHTML = `
-		<tr>
-		  <th class="job-title-header">Job Title</th>
-		  <th class="job-org-header">Organization</th>
-		  <th class="job-posted-header">Posted Date</th>
-		  <th class="job-closing-header">Closing Date</th>
-		</tr>
-	  `;
-	  table.appendChild(thead);
-	  
-
-	  const tbody = document.createElement('tbody');
-	  
+  }
+  
+  function filterJobs(filterType) {
+	const searchInput = document.getElementById('job-search');
+	const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
 	
-	  data.data.forEach((job) => {
-		const fields = job.fields || {};
-
-
-		const row = document.createElement('tr');
-		row.className = 'job-row';
-		
-
-		const titleCell = document.createElement('td');
-		titleCell.className = 'job-title-cell';
-		titleCell.innerHTML = `
-		  <a href="${fields.url || '#'}" target="_blank" class="job-link">
-			${fields.title || 'No Title'}
-		  </a>
-		`;
-		
-
-		const orgCell = document.createElement('td');
-		orgCell.className = 'job-org-cell';
-		orgCell.textContent = fields.source && fields.source.length > 0 
-		  ? fields.source[0].name 
-		  : 'Organization not specified';
-		
-		
-		const postedCell = document.createElement('td');
-		postedCell.className = 'job-posted-cell';
-		postedCell.textContent = fields.date && fields.date.created 
-		  ? new Date(fields.date.created).toLocaleDateString() 
-		  : 'Not available';
-		
-
-		const closingCell = document.createElement('td');
-		closingCell.className = 'job-closing-cell';
-		closingCell.textContent = fields.date && fields.date.closing 
-		  ? new Date(fields.date.closing).toLocaleDateString() 
-		  : 'Not specified';
-		
-
-		row.appendChild(titleCell);
-		row.appendChild(orgCell);
-		row.appendChild(postedCell);
-		row.appendChild(closingCell);
-
-		tbody.appendChild(row);
-	  });
-	  
-	
-	  table.appendChild(tbody);
-	  
-
-	  jobsContainer.innerHTML = '';
-	  jobsContainer.appendChild(table);
-	  
-	} catch (error) {
-	  console.error('Error:', error);
-
-	  const jobsContainer = document.getElementById('reliefweb-jobs-container');
-	  if (jobsContainer) {
-		jobsContainer.innerHTML = `<p class="jobs-error">Failed to load jobs: ${error.message}</p>`;
+	// If no filter type is provided, use the currently active button
+	if (!filterType) {
+	  const activeButton = document.querySelector('[data-filter].active');
+	  if (activeButton) {
+		filterType = activeButton.dataset.filter;
+	  } else {
+		filterType = 'all';
 	  }
 	}
+	
+	// Filter jobs based on type and search term
+	const filteredJobs = allJobs.filter(job => {
+	  // Filter by type (volunteer/paid)
+	  const typeMatch = filterType === 'all' || 
+					   (filterType === 'volunteer' && job.isVolunteer) || 
+					   (filterType === 'paid' && !job.isVolunteer);
+	  
+	  // Filter by search term
+	  const searchMatch = !searchTerm || 
+						 job.title.toLowerCase().includes(searchTerm) || 
+						 job.org.toLowerCase().includes(searchTerm);
+	  
+	  return typeMatch && searchMatch;
+	});
+	
+	// Display filtered jobs with pagination
+	displayJobs(filteredJobs);
+	
+	// Update pagination
+	updatePagination(filteredJobs.length);
+  }
+  
+  function displayJobs(jobs) {
+	const tableBody = document.getElementById('jobs-table-body');
+	
+	if (jobs.length === 0) {
+	  tableBody.innerHTML = '<tr><td colspan="6" class="text-center">No matching opportunities found.</td></tr>';
+	  return;
+	}
+	
+	// Calculate pagination
+	const startIndex = (currentPage - 1) * itemsPerPage;
+	const endIndex = Math.min(startIndex + itemsPerPage, jobs.length);
+	const pageJobs = jobs.slice(startIndex, endIndex);
+	
+	let html = '';
+	
+	pageJobs.forEach(job => {
+	  html += `
+		<tr>
+		  <td>${job.title}</td>
+		  <td>${job.org}</td>
+		  <td><span class="badge ${job.isVolunteer ? 'bg-info' : 'bg-success'}">${job.isVolunteer ? 'Volunteer' : 'Paid'}</span></td>
+		  <td>${job.posted}</td>
+		  <td>${job.closing}</td>
+		  <td><a href="${job.url}" target="_blank" class="btn btn-sm btn-primary">View</a></td>
+		</tr>  
+	  `  
+	  
+	  
+	  ;
+
+	});
+
+	
+	tableBody.innerHTML = html;
+	
+  }
+
+
+  
+  function updatePagination(totalItems) {
+	// Find or create pagination container
+	let paginationContainer = document.getElementById('jobs-pagination');
+	
+	if (!paginationContainer) {
+	  paginationContainer = document.createElement('div');
+	  paginationContainer.id = 'jobs-pagination';
+	  paginationContainer.className = 'mt-3 d-flex justify-content-center';
+	  
+	  const jobsContainer = document.getElementById('reliefweb-jobs-container');
+	  jobsContainer.appendChild(paginationContainer);
+	}
+	
+	// Calculate total pages
+	const totalPages = Math.ceil(totalItems / itemsPerPage);
+	
+	// Create pagination HTML
+	let paginationHtml = '<ul class="pagination">';
+	
+	// Previous button
+	paginationHtml += `
+	  <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+		<a class="page-link" href="#" data-page="${currentPage - 1}">Previous</a>
+	  </li>
+	`;
+	
+	// Page numbers (limit to 4 pages)
+	for (let i = 1; i <= Math.min(totalPages, 4); i++) {
+	  paginationHtml += `
+		<li class="page-item ${currentPage === i ? 'active' : ''}">
+		  <a class="page-link" href="#" data-page="${i}">${i}</a>
+		</li>
+	  `;
+	}
+	
+	// Next button
+	paginationHtml += `
+	  <li class="page-item ${currentPage === totalPages || totalPages === 0 ? 'disabled' : ''}">
+		<a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>
+	  </li>
+	`;
+	
+	paginationHtml += '</ul>';
+	
+	// Set pagination HTML
+	paginationContainer.innerHTML = paginationHtml;
+	
+	// Add click events to pagination links
+	const pageLinks = paginationContainer.querySelectorAll('.page-link');
+	pageLinks.forEach(link => {
+	  link.addEventListener('click', (e) => {
+		e.preventDefault();
+		const pageNum = parseInt(link.dataset.page);
+		
+		// Only change page if it's not disabled
+		if (!link.parentElement.classList.contains('disabled')) {
+		  currentPage = pageNum;
+		  filterJobs();
+		}
+	  });
+	});
   }

@@ -12017,6 +12017,10 @@ p {
   color: #eac81f;
 }
 
+.primary {
+  color: #09739a;
+}
+
 .article-content h2, .article-content .h2,
 .article-content p {
   font-family: "Newsreader", serif;
