@@ -45,48 +45,36 @@ $numberfour = get_field('number_four');
 
 ?>
 
-<section>
-
-
-    <div class="container text-center">
-        <div class="row align-items-center p-4">
-            <div class="col">
-                <h2>
-                    <?php echo $numberone ?>
-                </h2>
-                <h3>
-                    <?php echo $statone ?>
-                </h3>
+<section class="bg-light py-5">
+    <div class="container py-4">
+        <h2 class="text-center mb-5">Our Collective Impact</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <h2 class="display-5 fw-bold text-primary mb-2"><?php echo $numberone ?></h2>
+                    <p class="lead mb-0"><?php echo $statone ?></p>
+                </div>
             </div>
-            <div class="col">
-                <h2>
-                    <?php echo $numbertwo ?>
-                </h2>
-                <h3>
-                    <?php echo $stattwo ?>
-                </h3>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <h2 class="display-5 fw-bold text-primary mb-2"><?php echo $numbertwo ?></h2>
+                    <p class="lead mb-0"><?php echo $stattwo ?></p>
+                </div>
             </div>
-            <div class="col">
-                <h2>
-                    <?php echo $numberthree ?>
-                </h2>
-                <h3>
-                    <?php echo $statthree ?>
-                </h3>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <h2 class="display-5 fw-bold text-primary mb-2"><?php echo $numberthree ?></h2>
+                    <p class="lead mb-0"><?php echo $statthree ?></p>
+                </div>
             </div>
-            <div class="col">
-                <h2>
-                    <?php echo $numberfour ?>
-                </h2>
-                <h3>
-                    <?php echo $statfour ?>
-                </h3>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <h2 class="display-5 fw-bold text-primary mb-2"><?php echo $numberfour ?></h2>
+                    <p class="lead mb-0"><?php echo $statfour ?></p>
+                </div>
             </div>
         </div>
     </div>
-
-
-
 </section>
 
 
