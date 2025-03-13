@@ -21,8 +21,8 @@ $articles_query = new WP_Query(array(
 ));
 ?>
 
-<div class="container py-4">
-    <h3>Explore Articles</h3>
+<div class="container py-4 explore">
+    <h3>Fresh Perspectives: Just Documented</h3>
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
     <?php if ($articles_query->have_posts()) : ?>
       <?php while ($articles_query->have_posts()) : $articles_query->the_post(); ?>
@@ -44,6 +44,8 @@ $articles_query = new WP_Query(array(
       <?php endwhile; ?>
       <?php wp_reset_postdata(); ?>
 
+
+    
     
     <?php endif; ?>
   </div>

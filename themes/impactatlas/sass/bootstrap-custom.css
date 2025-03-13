@@ -12104,23 +12104,6 @@ li {
   margin: 0;
 }
 
-/* hero  */
-/* home page */
-.banner {
-  background-color: #eac81f;
-  height: 30px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  display: none;
-}
-
-.banner a {
-  text-decoration: none;
-  color: black;
-}
-
 .legend-icon {
   width: 15px;
   height: 15px;
@@ -12163,6 +12146,10 @@ li {
 
 .headline {
   color: #0e0e10;
+}
+
+.explore {
+  border-bottom: 1px solid gray;
 }
 
 /* Articles */

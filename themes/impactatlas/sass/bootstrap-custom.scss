@@ -154,25 +154,7 @@ margin: 0
   
   }
 
-/* hero  */
-// .carousel-caption {
-//   padding-bottom: 16%;
-// }
-/* home page */
 
-.banner {
-  background-color: $secondary;
-  height: 30px;
-
-}
-.carousel-control-prev,
-.carousel-control-next {
-    display: none;
-}
-.banner a {
-  text-decoration: none;
-  color: black;
-}
 
 .legend-icon {
   width: 15px;
@@ -223,6 +205,9 @@ text-decoration: underline;
   color: $dark;
 }
 
+.explore {
+  border-bottom: 1px solid gray;
+}
 
 
 
