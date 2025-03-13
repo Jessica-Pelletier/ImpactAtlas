@@ -1,6 +1,6 @@
 <section class="featured bg-light">
     <div class="container pt-5 p-5">
-        <h3>Featured Articles</h3>
+        <h2>Featured Articles</h2>
         <div class="row justify-content-center gy-4 g-md-4">
             <?php
             $featured_args = array(

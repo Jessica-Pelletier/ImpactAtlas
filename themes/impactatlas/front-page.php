@@ -14,8 +14,8 @@ get_header();
     <div class="row">
         <div class="col-md-12 pt-4">
             <div>
-            <h2> Tracking Global Progress in 2024 </h2>
-            <p>Our map documents verfified solutions and positive initiatives completed throughout 2024, creating an atlas of global progress.</p>
+            <h1> Mapping Change That Matters</h1>
+            <p>Discover where breakthrough solutions are transforming lives right now. Each pin represents verified success stories unfolding across the globe this year.</p>
             </div>
         </div>
         <div class="col">
@@ -118,7 +118,7 @@ get_header();
       <div class="row align-items-center mt-4">
         <div class="col-md-6">
           <div id="electricity-access-container">
-            <h3>Global Electricity Access</h3>
+            <h3>From Darkness to Light: The Global Electrification Revolution</h3>
             <p>Tracking worldwide progress in electricity accessibility from 1998 to 2022, highlighting significant improvements in global energy infrastructure.</p>
             <div>
               <a href="https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS?locations=1W&start=1998&view=chart">
@@ -174,7 +174,7 @@ get_header();
             ?>
           </div>
           
-          <div class="mt-3">
+          <div class=" text-end mt-3">
             <a href="<?php echo get_term_link(20, 'article_categories'); ?>" class="btn btn-outline-primary btn-sm">
               View All Educational Articles
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">

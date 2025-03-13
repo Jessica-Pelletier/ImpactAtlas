@@ -20,9 +20,9 @@ $theme-colors: (
 );
 
 //font-sizes
-$extralarge: 3.4rem;
-$large: 2.5rem;
-$medium: 1.2rem;
+$extralarge: 3rem;
+$large: 2rem;
+$medium: 1.3rem;
 $small: 1rem;
 $body: 18px;
 
@@ -130,6 +130,8 @@ li {
   min-height: 35vh;
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+
 }
 
 .map {
@@ -206,9 +208,13 @@ text-decoration: underline;
 }
 
 .explore {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
 }
 
+
+.spotlight {
+  border-bottom: 1px solid lightgray;
+}
 
 
 /* Articles */

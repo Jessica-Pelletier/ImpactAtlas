@@ -20,9 +20,10 @@ if ($featured_query->have_posts()) :
         $spotlightText = get_field('article_body');
 ?>
 
-<div class="row align-items-center">
+<div class="row align-items-center spotlight  pb-4">
+    <h2 class="mb-3"> Leaders in the Spotlight: Catalysts for Change </h2>
     <div class="col-md-6">
-        <div>
+        <div >
             <h3><?php the_title(); ?></h3>
             <p><?php echo wp_trim_words($spotlightText, 30, '...'); ?></p>
             <div>
