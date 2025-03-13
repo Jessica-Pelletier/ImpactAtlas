@@ -89,6 +89,10 @@ p {
   font-family: "Newsreader", serif;
 }
 
+p {
+  font-family: "Newsreader", serif;
+}
+
 //leaflet map legend colors
 .blue { background-color: #09739a}
 .green { background-color: #2ecc71}
@@ -99,11 +103,14 @@ p {
 
 
 /* Header styles */
+.navbar { 
+  // background-color: #ECF9FE;
+}
 .menu-item a {
   text-decoration: none;
   // text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: $light;
+  color: $primary;
   font-size: $medium;
 }
 
@@ -119,18 +126,23 @@ li {
   font-weight: 500;
   text-transform: uppercase;
   font-size: $medium;
-  border-radius: 0;
+  border-radius: 1;
 }
 
+/* hero and map */
+
+.hero {
+  background-color: #EBF3F7;
+}
 
 /*Leaflet js */
 
 #map {
-  height: 35vh;
-  min-height: 35vh;
+  height: 45vh;
+
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-
+  width: 80vw;
 
 }
 

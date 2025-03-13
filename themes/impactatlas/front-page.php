@@ -9,21 +9,27 @@ get_header();
 
 <!-- <?php get_template_part('template-parts/home-page/banner') ?> -->
 <!--leaflet.js map section-->
-
+<div class="hero pb-2">
 <div class="container text-center ">
     <div class="row">
         <div class="col-md-12 pt-4">
             <div>
             <h1> Mapping Change That Matters</h1>
-            <p>Discover where breakthrough solutions are transforming lives right now. Each pin represents verified success stories unfolding across the globe this year.</p>
+            
             </div>
         </div>
         <div class="col">
 
-            <div id="map"></div>
+            <div id="map" class="mx-auto"></div>
+       
         </div>
+       
     </div>
+    <h4>Discover where breakthrough solutions are transforming lives right now. Each pin represents verified success stories unfolding across the globe this year.</h4>
+
 </div>
+
+
 
 
 <section class="map-info py-4">
@@ -69,7 +75,7 @@ get_header();
             </div>
 
 
-
+      
 
 
             <div class="col-md-8">
@@ -98,6 +104,7 @@ get_header();
 
 </section>
 
+</div>
 
 
 

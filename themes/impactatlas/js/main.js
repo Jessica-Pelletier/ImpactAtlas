@@ -42,7 +42,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		}
 
 		// Initialize map
-		const map = L.map( 'map' ).setView( [ 0, 0 ], 1 ).setZoom( 2 );
+		const map = L.map( 'map' ).setView( [ 20, 10 ], 1 ).setZoom(1.8 );
 
 		// Add tile layer
 		L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

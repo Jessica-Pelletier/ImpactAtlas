@@ -12027,6 +12027,10 @@ p {
   font-family: "Newsreader", serif;
 }
 
+p {
+  font-family: "Newsreader", serif;
+}
+
 .blue {
   background-color: #09739a;
 }
@@ -12055,7 +12059,7 @@ p {
 .menu-item a {
   text-decoration: none;
   font-family: "Poppins", sans-serif;
-  color: #f8f9fa;
+  color: #09739a;
   font-size: 1.3rem;
 }
 
@@ -12071,15 +12075,20 @@ li {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 1.3rem;
-  border-radius: 0;
+  border-radius: 1;
+}
+
+/* hero and map */
+.hero {
+  background-color: #EBF3F7;
 }
 
 /*Leaflet js */
 #map {
-  height: 35vh;
-  min-height: 35vh;
+  height: 45vh;
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80vw;
 }
 
 .map {
