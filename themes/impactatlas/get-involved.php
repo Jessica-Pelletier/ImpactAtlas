@@ -80,7 +80,7 @@ $numberfour = get_field('number_four');
 
 <!-- Releif web opportunities  -->
 
-<section class="relief-web-section py-4">
+<section class="relief-web-section py-4" id="ways-to-help">
   <div class="container">
     <h3 class="mb-4">Global Humanitarian Opportunities</h3>
     

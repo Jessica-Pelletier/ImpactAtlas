@@ -7,7 +7,7 @@ get_header();
 
 ?>
 
-<!-- <?php get_template_part('template-parts/home-page/banner') ?> -->
+
 <!--leaflet.js map section-->
 <div class="hero pb-2">
 <div class="container text-center ">
@@ -182,8 +182,8 @@ get_header();
           </div>
           
           <div class=" text-end mt-3">
-            <a href="<?php echo get_term_link(20, 'article_categories'); ?>" class="btn btn-outline-primary btn-sm">
-              View All Educational Articles
+            <a href="<?php echo get_permalink(35); ?>" class="btn btn-outline-primary btn-sm">
+              View All Articles
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
               </svg>
