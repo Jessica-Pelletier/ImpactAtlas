@@ -14,7 +14,8 @@ get_header();
     <div class="row">
         <div class="col-md-12 pt-4">
             <div>
-            <h1> Mapping Change That Matters</h1>
+            <h1 class="fw-bold"> Mapping Change That Matters</h1>
+            <h3>Discover where breakthrough solutions are transforming lives right now. Each pin represents verified success stories unfolding across the globe this year.</h3>
             
             </div>
         </div>
@@ -25,7 +26,7 @@ get_header();
         </div>
        
     </div>
-    <h4>Discover where breakthrough solutions are transforming lives right now. Each pin represents verified success stories unfolding across the globe this year.</h4>
+    
 
 </div>
 
