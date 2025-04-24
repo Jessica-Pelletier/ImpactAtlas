@@ -21,7 +21,7 @@ get_header();
         </div>
         <div class="col">
 
-            <div id="map" class="mx-auto"></div>
+            <div id="map" class="mx-auto w-100"></div>
        
         </div>
        

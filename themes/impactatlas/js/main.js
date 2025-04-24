@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		  <td><span class="badge ${job.isVolunteer ? 'bg-info' : 'bg-success'}">${job.isVolunteer ? 'Volunteer' : 'Paid'}</span></td>
 		  <td>${job.posted}</td>
 		  <td>${job.closing}</td>
-		  <td><a href="${job.url}" target="_blank" class="btn btn-sm btn-primary">View</a></td>
+		  <td><a href="${job.url}" target="_blank" class="btn btn-sm btn-view ">View</a></td>
 		</tr>  
 	  `  
 	  
